@@ -1,0 +1,43 @@
+.container{
+	background-color: lightgray;
+	min-height: 100%;
+}
+
+.max-sized{
+	max-width: 60em;
+}
+
+
+.pp-side-nav{
+	padding:30px;
+	
+}
+
+.output{ margin-bottom:12px;}
+.output label{
+	display:block;
+	font-size:80%;
+	color:gray;
+}
+
+.output span{
+	display:block;
+}
+
+table.less thead th{
+
+	color: lightgray;
+	text-decoration: none;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+table.less{text-align:center;	}
+table.less td { padding:6px 18px; }
+
+@media screen and (min-width: 960px) {
+    .md-sidenav-left{
+		background-color: transparent;
+		 box-shadow:0 0 0 0;
+	}
+}
