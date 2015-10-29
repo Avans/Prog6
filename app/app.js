@@ -1,3 +1,4 @@
+/* global FFB901 */
 
 /**
  * Step 1 - Making our own module
@@ -10,7 +11,7 @@
  * read more on  https://material.angularjs.org/latest/
  *  ngMdIcons : An Angular based framework for showing icons
 */
-var app = angular.module('AdvansDefault', ["PointyPony", "ngMdIcons", "ui.router",  "ngMaterial"]);
+var app = angular.module('Prog6', ["PointyPony", "ngMdIcons", "ui.router",  "ngMaterial"]);
 
 
 /**
@@ -19,18 +20,46 @@ var app = angular.module('AdvansDefault', ["PointyPony", "ngMdIcons", "ui.router
  */
 app.constant('appConfig', {
 	//Replace this token with your token from the course
-	courseToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IkFkdmFuc0RlZmF1bHQi.pxQMx28KtpfaWaTqrknWutoDnddHN5phcCE3gysorOI",
+	courseToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IlByb2c2Ig.7gUu3oCVPeePAGdoTi45o5tJHwta-6oPFY8ec6OYJ5U",
 });
 
 //Make your own elements, in our case a routing config and a app controller
 var routesConfig = require('./config/routes');
 var appCtrl = require("./controllers/appCtrl");
+var towerCtrl = require('./controllers/towerCtrl');
 
 //Add the controller and config to the module
 app.controller('appCtrl', appCtrl);
+app.controller('towerCtrl', towerCtrl);
 app.config(routesConfig);
 
 
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.definePalette('amazingPaletteName', {
+    '50': '01A4EF',
+    '100': '01A4EF',
+    '200': '01A4EF',
+    '300': '01A4EF',
+    '400': '01A4EF',
+    '500': '01A4EF',
+    '600': '01A4EF',
+    '700': '01A4EF',
+    '800': '01A4EF',
+    '900': '01A4EF',
+    'A100': 'FFB901', //Yellow
+    'A200': '259b24', //Green
+    'A400': 'ff1744',
+    'A700': 'd50000',
+    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                        // on this palette should be dark or light
+    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+    'contrastLightColors': undefined    // could also specify this if default was 'dark'
+  });
+  $mdThemingProvider.theme('default')
+    .primaryPalette('amazingPaletteName')
+});
 
 
   
+

@@ -1,12 +1,10 @@
 .container{
-	background-color: lightgray;
+	background-color: #eee;
 	min-height: 100%;
 }
 
-.max-sized{
-	max-width: 60em;
-}
-
+.max-sized{max-width: 60em;}
+.padding-top{padding-top:30px;}
 
 .pp-side-nav{
 	padding:30px;
@@ -34,6 +32,15 @@ table.less thead th{
 
 table.less{text-align:center;	}
 table.less td { padding:6px 18px; }
+
+.md-button:disabled  {
+	fill: rgba(0,0,0,0.26);
+}
+
+/**
+Assignment style
+
+**/
 
 @media screen and (min-width: 960px) {
     .md-sidenav-left{

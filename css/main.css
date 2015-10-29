@@ -1,0 +1,49 @@
+/** Assignments **/
+
+.assignment{ margin-bottom:22px; }
+.assignment .header{ padding:16px; color:white; position:relative;}
+.assignment .header h2{ font-size:36px; margin-bottom:5px;}
+.assignment .header .points{
+	padding:15px;
+	background-color:white;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+	border-radius: 50%; font-size:22px;
+	color:black;
+	font-weight: bold;
+	position:absolute;
+	bottom:-26px; right:16px;
+}
+/*.assignment.easy .header{ background-color:#7FBA00; }*/
+.assignment.easy .header{ background-color:#259b24; }
+.assignment.normal .header{ background-color:#FFB901; }
+.assignment.workshop .header{ background-color:#01A4EF; }
+/** Assignment end **/
+
+
+/** The tower **/
+#background{
+	position: absolute;
+	background-image: url("img/Background.png");
+	width:100%;
+	height:100%;
+	background-size: cover;
+	background-position: 0% 80%;
+	border:2px solid green;
+	background-repeat: no-repeat
+}
+
+#canvas{
+	position: relative;
+	bottom:0px;
+	width:100%;
+	height:400px;
+	overflow:hidden;
+}
+
+#canvas img{
+	position:absolute;
+	left:0px;bottom:0px;
+	width:100%;	
+	transition: bottom ease-in-out 1s;
+}
+
