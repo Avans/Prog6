@@ -7,14 +7,20 @@
         <md-card-content>
 			
           <section id="canvas">
-				<img src="default/img/Background.png" style="bottom: -{{0.7 * level}}">
-				<img src="default/img/Gebouw4.png?a" style="bottom: -{{0.9 * level }}">
-				<img src="default/img/Gebouw3.png?b"  style="bottom: -{{0.92 * level }}">
-				<img src="default/img/Gebouw2.png?c"  style="bottom: -{{0.94 * level }}">
-				<img src="default/img/Gebouw1.png?d"  style="bottom: -{{0.96 * level }}">
+				<img src="default/img/Background.png" style="bottom: -{{0.5 * level}}">
+				<img src="default/img/MVC.png" style="bottom: -{{0.6 * level }}">
+				<img src="default/img/WCF.png"  style="bottom: -{{0.7 * level }}">
+				<img src="default/img/EF.png"  style="bottom: -{{0.8 * level }}">
+				<img src="default/img/WPF.png"  style="bottom: -{{0.9 * level }}">
 			</section>
 			
-			<md-slider flex ng-model="level" min="0" max="1100" aria-label="level" class="md-primary">
+			<md-slider flex ng-model="level" min="0" max="1400" aria-label="level" class="md-primary">
+			</md-slider>
+				
+			<md-button class="md-raised md-primary" ng-click="toLevel(0)">WPF</md-button>
+			<md-button class="md-raised md-primary" ng-click="toLevel(600)">EF</md-button>
+			<md-button class="md-raised md-primary" ng-click="toLevel(1000)">WCF</md-button>
+			<md-button class="md-raised md-primary" ng-click="toLevel(1400)">MVC</md-button>
 
      
         </md-card-content>
