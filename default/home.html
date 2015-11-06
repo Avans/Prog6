@@ -1,4 +1,4 @@
-<md-toolbar class="md-theme-indigo">
+<md-toolbar class="md-theme-indigo withSkyline" >
 	<h1 class="md-toolbar-tools">Home</h1>
 </md-toolbar>
 
@@ -13,14 +13,17 @@
 				<md-button class="md-primary" ng-click="toLevel(100)">MVC</md-button>
 			</section>
 		
-
+			
 			
           	<section id="canvas">
-				<img src="default/img/Background.png" style="bottom: -{{0.4 * level}}">
+				<img id="loader" src="default/img/loading.gif" style="bottom: 0px">
+				<img id="firstToLoad" src="default/img/Background.png" style="bottom: -{{0.4 * level}}">
+				<img src="default/img/wolk1.png" class="cloud" style="bottom: -{{0.5 * level}}">
 				<img src="default/img/MVC.png" style="bottom: -{{ level }}">
 				<img src="default/img/WCF.png"  style="bottom: -{{1.2 * level }}">
 				<img src="default/img/EF-AAN.png"  style="bottom: -{{1.4 * level }}">
 				<img src="default/img/WPF-AAN.png"  style="bottom: -{{1.6 * level }}">
+				<img src="default/img/wolk2.png" class="cloud reverse" style="bottom: -{{level}}">
 				
 				<section class="banner" id="wpf"  ng-show="isNear(0)" layout="row" >
 					

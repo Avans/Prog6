@@ -1,46 +1,80 @@
-<md-toolbar>
+<md-toolbar  class="withSkyline">
 	<h1 class="md-toolbar-tools">Testing</h1>
 </md-toolbar>
 
-<section class="max-sized">
-    <md-card>
-	  <md-toolbar>
-		<h1 class="md-toolbar-tools">Introductie</h1>
-	  </md-toolbar>
-      <md-card-content>
-		
-        <p>
-          Deze week gaan we ons veder verdiepen in het onderdeel unit testing. 
-          Dit is vorig blok terspraken gekomen, maar zullen we dit blok intensiever moeten gaan toepassen. 
-          Laten we beginnen met een korte herhaling van vorig blok. 
-        </p>
-        
-        <p>
-            In Visual Studio kun je een <strong>Unit Test Project</strong> toevoegen aan je solution, 
-            waar je kleine stukjes code kan schrijven die methodes
-            voor je kunnen aanroepen en de output van deze methodes kunnen 'asserten'.    
-        </p>
-        <p>
-            Dit project bestaat uit classes met een <Strong>TestClass</Strong> attribuut, alswel methodes met een <strong>TestMethod</strong> attribuut. 
-            Deze methodes kun je uitvoeren via de <strong>Test Window</strong> in visual studio. Hier kun je zien of een test geslaagd is
-            en zo niet, wat dan de reden is dat de test niet gelukt is. 
-        </p>
-        
-        <p><i>Tip: De test explorer kun je vinden onder <strong>Test > Window > Test Explorer</strong></i></p>
-               
 
-      </md-card-content>
-    </md-card>
-    <div class="md-actions" layout="row" layout-align="center center">
-                
-          <md-button disabled>
-              <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
-          </md-button>
-          <md-button  ui-sref="testingBasics" >
-              <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
-              <md-tooltip>Basics</md-tooltip>
-          </md-button>
-     </div>
+<section class="max-sized">
+  
+  
+  
+  <article class="md-padding">
+      <h2>Introductie</h2>
+      <p>
+        Deze week gaan we ons veder verdiepen in het onderdeel unit testing. 
+        Dit is vorig blok terspraken gekomen, maar zullen we dit blok intensiever moeten gaan toepassen. 
+        Laten we beginnen met een korte herhaling van vorig blok. 
+      </p>
+      
+      <p>
+          In Visual Studio kun je een <strong>Unit Test Project</strong> toevoegen aan je solution, 
+          waar je kleine stukjes code kan schrijven die methodes
+          voor je kunnen aanroepen en de output van deze methodes kunnen 'asserten'.    
+      </p>
+      <p>
+          Dit project bestaat uit classes met een <Strong>TestClass</Strong> attribuut, alswel methodes met een <strong>TestMethod</strong> attribuut. 
+          Deze methodes kun je uitvoeren via de <strong>Test Window</strong> in visual studio. Hier kun je zien of een test geslaagd is
+          en zo niet, wat dan de reden is dat de test niet gelukt is. 
+      </p>
+      
+      <p><i>Tip: De test explorer kun je vinden onder <strong>Test > Window > Test Explorer</strong></i></p>
+              
+  </article>
+
+  <md-card >
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Example:</h1>
+      </md-toolbar>
+      <md-card-content>
+        <pre class="prettyprint linenums">
+[TestClass]
+public class CalculatorTests
+{
+    [TestMethod]
+    public void Add_Return_Correct_Value()
+    {
+        // 1. Arrange
+        var calculator = new Calculator();
+        // 2. Act
+        int result = calculator.Add(2, 3, 4);
+        // 3. Assert
+        Assert.AreEqual<int>(9, result);
+    }
+}</pre>
+  </md-card-content>
+  
+  </md-card>
+
+
+
+  <div class="md-actions" layout="row" layout-align="center center">      
+      <md-button disabled>
+          <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+      </md-button>
+      <md-button  ui-sref="testingBasics" >
+          <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+          <md-tooltip>Basics</md-tooltip>
+      </md-button>
+    </div>
 </section>
 
 
+ <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
+<script>
+    
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+  
+</script>

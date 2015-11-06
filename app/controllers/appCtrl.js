@@ -1,4 +1,4 @@
-module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
+module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope, $location, $anchorScroll) {
     
 
     $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
@@ -13,5 +13,11 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
           $mdSidenav('left').close();
     }
    
-    
+    $scope.scrollTo = function(id) {
+        debugger;
+        var old = $location.hash();
+        $location.hash(id);
+        $anchorScroll();
+        $location.hash(old);
+   }
 };

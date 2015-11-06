@@ -47,6 +47,40 @@
 	transition: bottom ease-in-out 1s;
 }
 
+#canvas #loader{
+	width:50px;
+	left:50%;
+	bottom:50%;
+	margin-left:-25px;
+	margin-bottom:-25px;
+}
+
+
+#canvas .cloud{
+	animation-name: cloud;
+    animation-duration: 70s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	left:-100%;
+}
+
+#canvas .cloud.reverse{
+	animation-name: cloud-reverse;
+	left:100%;
+}
+
+@keyframes cloud {
+    0%   {left:-100%}
+    100% {left:100%;}
+}
+
+@keyframes cloud-reverse {
+    0%   {left:100%}
+    100% {left:-100%;}
+}
+
+
+
 #canvas .banner{
 	color: black;
 	position: absolute;
@@ -60,7 +94,6 @@
 	background-color: rgba(255, 255 , 255 , 0.8);
 	min-width: 30%; max-width: 100%;
 	opacity: 1;
-	
 }
 
 #canvas .banner.ng-hide{
@@ -68,6 +101,39 @@
 	left:-100%;
 }
 
+.withSkyline{
+	background-image: url("img/skyline.png");
+	background-repeat: no-repeat;
+	background-position: 80% 100%;
+	background-size: contain;
+}
 
 
-/* The finishing CSS styles for the enter animation */
+
+/** End of Tower **/
+
+.relative{
+	position: relative;
+}
+
+.preImage{
+	position: absolute;
+	width:100px;
+	left: -110px;
+	border:2px solid white;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+
+/** My .NET code prittefy styles **/
+.com       { color: #008000; }
+.str, .tag { color: #A31515; }
+.kwd, .atv { color: #0000FF; }
+.typ       { color: #2B91AF; }
+.lit, .atn { color: #FF0000; }
+.pun, .pln { color: #000000; }
+.dec       { color: #800080; }
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{ list-style-type: decimal !important }
+pre.prettyprint {border:0px !important;}

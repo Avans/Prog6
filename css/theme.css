@@ -11,6 +11,13 @@
 	
 }
 
+.cardholder{
+	position:relative;
+}
+.cardholder md-card{
+	height:350px;
+}
+
 .output{ margin-bottom:12px;}
 .output label{
 	display:block;
@@ -36,11 +43,13 @@ table.less td { padding:6px 18px; }
 .md-button:disabled  {
 	fill: rgba(0,0,0,0.26);
 }
-
 /**
 Assignment style
 
 **/
+
+.link{text-decoration: underline;color: #0000FF;}
+.link:hover{cursor: pointer;}
 
 @media screen and (min-width: 960px) {
     .md-sidenav-left{
@@ -48,3 +57,5 @@ Assignment style
 		 box-shadow:0 0 0 0;
 	}
 }
+
+

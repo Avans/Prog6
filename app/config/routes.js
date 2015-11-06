@@ -33,7 +33,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         //patterns
         addState('patternsIntroductie');
         //Wcf
-        addState('testingwcfIntroductieBasics');
+        addState('wcfIntroductie');
         //Mvc
         addState('mvcIntroductie');
 

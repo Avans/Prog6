@@ -33,7 +33,6 @@ app.controller('appCtrl', appCtrl);
 app.controller('towerCtrl', towerCtrl);
 app.config(routesConfig);
 
-
 app.config(function($mdThemingProvider) {
   $mdThemingProvider.definePalette('amazingPaletteName', {
     '50': '01A4EF',

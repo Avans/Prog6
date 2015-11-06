@@ -1,27 +1,257 @@
-<md-toolbar>
-	<h1 class="md-toolbar-tools">Testing</h1>
+<md-toolbar class="withSkyline">
+	<h1 class="md-toolbar-tools ">Testing</h1>
+  
 </md-toolbar>
 
 <section class="max-sized">
-    <md-card>
-	  <md-toolbar>
-		<h1 class="md-toolbar-tools">Advanced</h1>
-	  </md-toolbar>
-      <md-card-content>
-        
-        <p>Hoe schrijven we goede unit test en weten we zeker dat onze code juist is?</p>
-     
-      </md-card-content>
-    </md-card>
     
+    
+    
+    <article class="md-padding">
+      <h2>Advanced unit testing</h2>
+      
+      <p>
+        Nu we weten hoe we een unit test moeten schrijven, kunnen we gaan kijken hoe we dit gaan toepassing in een echt project.
+        Waar schrijven we wel unit tests voor? Waar schrijven we geen unit test voor? Dit zijn vragen waar elke ontwikkelaar een ander antwoord voor heeft. 
+      </p>
+
+      
+      <p>
+        De meningen over unit testen zijn enorm verdeeld. Ik kan je aanraden om het onderstaande artikel van <b>Martin Fowler</b> te lezen over unit testen.
+        Daarnaast zijn er nog meer interresante artikkelen te vinden over dit onderwerp.
+      </p>
+  
+      <section class="output">
+          <label>Martin Fowler</label>
+          <span class="ng-binding"><a target="_blank" href="  http://martinfowler.com/bliki/UnitTest.html">http://martinfowler.com/bliki/UnitTest.html</a></span>
+      </section>
+      
+      <p>
+        De onderwerpen waar wij het over gaan hebben zijn gericht op de praktische kant van unit testen. 
+      </p>
+      
+      <ol>
+        <li>
+          <a class="link" ng-click="scrollTo('coverage')"><b>Code Coverage</b></a>
+          : Wanneer heb ik genoeg tests geschreven?
+        </li>
+        <li>
+           <a class="link" ng-click="scrollTo('tdd')"><b>Test driven development</b></a>
+            : Op welk moment schrijf ik mijn tests?
+        </li>
+        <li>
+           <a class="link" ng-click="scrollTo('mock')"><b>Mocking & Stubbing</b></a>
+           : Hoe zorg ik er voor dat ik een losse <b>unit</b> kan testen?
+        </li>
+      </ol>
+      
+      <hr>
+    </article>
+      
+    <article class="md-padding"  id="coverage">
+        
+        <h3>Code Coverage</h3>
+        
+        <p>
+          Hoe weten we nu of we genoeg tests hebben geschreven?
+          De juiste tooling maken je het leven een stuk makkelijker.</p>
+        
+        <p>
+          In visual studio heb je de mogelijkheid om te kijken hoeveel code je op dit moment test.
+          Dit onderdeel heet code coverage. 
+        </p>
+        
+        <p> 
+          Dit kan je helpen in te schatten of je voor elk onderdeel van je code een test hebt geschreven.
+          Daarnaast kun je zien of je elke uitzondering geraakt hebt.
+        </p>
+        
+   
+    
+      
+        <md-card>
+          <md-card-content>
+            <img src="onderwerp/testing/img/coverage.png" width="100%">
+          </md-card-content>
+        </md-card>
+        
+        <p>
+          De code coverage ( in <b>%</b> ) verteld je iets over de kwaliteit van de code. 
+          Normaliter wordt er een minimale code coverage aangehouden. 
+          Een professioneel software ontwikkel team zorgt er voor dat het toevoegen van nieuwe code 
+          er automatisch wordt gecontroleerd of de code coverage nog wel hoog genoeg is. 
+          Is dit niet het geval dan 'breekt de build' (dit is het zelfde als het niet compileren van code).
+        <p>
+          Naast het overzicht kun je ook aanvinken dat je de coverage terug wilt zien in de code zelf.
+        </p>
+    
+  
+        <md-card> <md-card-content>
+            <img src="onderwerp/testing/img/coverageVisual.png" width="100%">
+        </md-card-content></md-card>
+    
+    </article>
+    
+    <article class="md-padding"  id="tdd">
+      <md-card>
+        <md-toolbar>
+        <h1 class="md-toolbar-tools">Test Driven Development</h1>
+        </md-toolbar>
+          <md-card-content>
+              
+            <p> 
+              Test-Driven Development (TDD) is een ontwikkelmethode voor software waarbij eerst tests worden geschreven en daarna pas de code.
+              Hierbij horen de volgende stappen:
+            </p>
+            
+            <ol>
+                <li><b>Test maken:</b> In Test-Driven Development maakt de programmeur eerst een test, gebaseerd op een requirement en schrijft pas dan de code.</li>
+                <li><b>Alle tests draaien en kijken of de nieuwe test faalt:</b> Deze test moet initieel in principe falen, aangezien het stuk code waarop deze test van toepassing is nog niet bestaat. Het laten falen van de nieuwe test is belangrijk om na te gaan of de test effectief is (geen fouten bevat en daardoor bijvoorbeeld altijd slaagt).</li>
+                <li><b>Code schrijven:</b> In deze stap wordt de daadwerkelijke code geschreven om de zojuist gemaakte test te laten slagen. Deze code mag alleen functionaliteit bevatten die nodig is om de test te laten slagen. De code hoeft niet perfect geschreven te zijn, zolang deze maar werkt. In een latere stap zal de code nog herschreven worden volgens de standaard.</li>
+                <li><b>Tests draaien en kijken of deze slagen:</b> In deze stap draaien alle tests nogmaals en wordt gekeken of alle tests slagen. Is dit het geval dan is dit een goed uitgangspunt om aan de volgende stap te beginnen.</li>
+                <li><b>Code herschrijven:</b> In deze stap wordt de code opgeschoond en volgens de standaard herschreven. Ook zal eventuele dubbele code, nodig om de onderlinge afhankelijkheid van de componenten te minimaliseren, verwijderd worden.</li>
+            </ol>
+          </md-card-content>
+      </md-card>
+    </article>
+    
+     <article class="md-padding"  id="mock">
+      <h2>Mocken en Stubbing</h2>
+     
+      <p>
+        Als je software aan het schrijven bent zullen klasse met elkaar gaan communiceren.
+        Hierdoor worden deze klasse afhankelijk van elkaar. Dit noemen ze <b>Tight coupling</b>.
+       </p>
+       
+       <p>
+         Als we nu 1 klasse gaan testen, roept deze klasse weer 2 andere klasse. Als de test nu faalt, weten we niet of dit komt door de code in de
+         klasse die we aan het testen zijn, of de code van een van de klasse waar ons object mee communiceert.
+       </p>
+       
+       <img src="onderwerp/testing/img/isolation.png" width="100%">
+       
+       <p>
+         Dit kunnen we voorkomen door objecten in de code te vervangen door een <b>stub</b>. 
+         Hiermee maken we een een nieuwe klasse die voldoet aan de interface waar onze 'te teste' klasse afhankelijk van is.
+       </p>
+          
+       <p>
+          Dit zelfde kunnen we doen met een <b>mock</b>. Het enige verschil is dat een mock object slimmer is dan een stub. 
+          Een mock geeft ons de mogelijkheid om te kijken of er methodes op deze klasse zijn gebruikt, en hoe vaak deze methodes zijn aangeroepen.
+          Om deze reden gaan wij niet werken met stubs, maar alleen met mocks. 
+       </p>
+       
+       <p>
+         Om het nut van een mock te verduidelijke zie je hieronder een voorbeeld. De code verwijst naar de huiswerkopdracht van deze week.
+         In deze opdracht ga je tests schrijven voor een tovenaar, en deze tovenaar heeft een staf. In het voorbeeld mock ik deze staf.
+         Om deze mock te maken gebruik ik een framework. Hier kun je meer over lezen na het voorbeeld.
+       </p>
+         
+      
+     
+     </article>
+     
+
+    
+      <md-card >
+        <md-toolbar>
+        <h1 class="md-toolbar-tools">Example: Mocking</h1>
+        </md-toolbar>
+        <md-card-content>
+        <pre class="prettyprint linenums">
+//1. Arrange
+List<String> woorden = new List<String>() { "ban", "da", "ladik"}; 
+List<String> ing = new List<String>() { "??" };
+Mock<Toverstaf> stafMock = new Mock<Toverstaf>();
+Tovenaar t = new Tovenaar(stafMock.Object);
+
+//2. Act
+String result = t.Toverspreuk(ing, woorden);
+
+//3. Assert
+//Controlleer of de tovernaar de juiste bewegingen maakt
+stafMock.Verify(s => s.links(), Times.Once);
+stafMock.Verify(s => s.rechts(), Times.Once);
+</pre>
+        </md-card-content>
+      </md-card>
+        
+      <article class="md-padding">
+    
+        <h3>Mocking Frameworks</h3>
+        
+        <p>
+          Je kan zelf voor alle klasse wie je wilt mocken een nieuwe klasse schrijven, maar dit kan ook een stuk makkelijker.
+          Via de <b>Nuget Package Manager</b> is het heel eenvoudig om een mocking framework te installeren.
+          Hieronder volgt een lijst van mocking frameworks, maar ik kan je aanraden om <a target="_blank" href="https://github.com/Moq/moq4">Moq</a> te gebruiken.
+        </p>
+      </article>
+      
+      <section layout="row"  layout-wrap class="cardholder">
+        <!-- MOQ -->
+       <section flex="33" flex-sm="100"><md-card>
+          <img src="onderwerp/testing/img/moq.png">
+          <md-card-content>
+            <p>MOQ</p>
+            <section class="output">
+                <label>Github</label>
+                <span class="ng-binding">
+                     <a target="_blank" href="https://github.com/Moq/moq4">https://github.com/Moq/moq4</a>
+                </span>
+            </section>
+          </md-card-content>
+        </md-card></section>
+        
+           <!-- Fake It Easy -->
+        <section flex="33" flex-sm="100"><md-card>
+          <img src="onderwerp/testing/img/fie.png">
+          <md-card-content>
+            <p>Fake it easy</p>
+            <section class="output">
+                <label>Github</label>
+                <span class="ng-binding">
+                     <a target="_blank" href="https://fakeiteasy.github.io">https://fakeiteasy.github.io/</a>
+                </span>
+            </section>
+          </md-card-content>
+        </md-card></section>
+        
+         <!-- Rhino Mocks -->
+        <section flex="33" flex-sm="100"><md-card>
+          <img src="onderwerp/testing/img/rhino.png">
+          <md-card-content>
+            <p>Rhino Mocks</p>
+            <section class="output">
+                <label>Website</label>
+                <span class="ng-binding">
+                        <a target="_blank" href="http://www.hibernatingrhinos.com/oss/rhino-mocks">http://www.hibernatingrhinos.com</a>
+             </span>
+            </section>
+          </md-card-content>
+        </md-card></section>
+
+    </section>
+
     <div class="md-actions" layout="row" layout-align="center center">        
         <md-button  ui-sref="testingBasics"  >
             <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
             <md-tooltip>Basics</md-tooltip>
         </md-button>
-        <md-button disabled>
-            <ng-md-icon icon="navigate_next" size="36" ></ng-md-icon> 
+       <md-button  ui-sref="opdrachten1"  >
+            Assignments
+            <md-tooltip>Opdrachten Unit Testing</md-tooltip>
         </md-button>
-        
     </div>
+    
 </section>
+
+ <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
+<script>
+    
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+  
+</script>

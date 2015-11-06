@@ -5,15 +5,26 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 	var canvasWidth = document.getElementById('canvas').offsetWidth;
 	var canvasHeight = document.getElementById('canvas').offsetHeight;
 	
+	$scope.ready = false;
 	$scope.realHeight = (canvasWidth * ratio - canvasHeight);
-	$scope.level = 0;
+
+
+	$('#firstToLoad').on('load', function(){
+		$scope.ready = true;
+		$scope.toLevel(70);
+	});
 
 	$scope.toLevel = function(newLevel){
 		$scope.level = $scope.realHeight / 100 * newLevel;
 	}
 	
 	$scope.isNear = function(value){
+		if(!$scope.ready)
+			return false;
+			
 		value =  $scope.realHeight / 100 * value;
-		return $scope.level < (value + 20) && $scope.level > (value - 20);
-	}
+		return $scope.level < (value + 100) && $scope.level > (value - 100);
+	};
+	
+	
 };
