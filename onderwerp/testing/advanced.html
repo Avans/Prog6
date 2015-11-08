@@ -11,14 +11,14 @@
       <h2>Advanced unit testing</h2>
       
       <p>
-        Nu we weten hoe we een unit test moeten schrijven, kunnen we gaan kijken hoe we dit gaan toepassing in een echt project.
+        Nu we weten hoe we een unit test moeten schrijven, kunnen we gaan kijken hoe we dit gaan toepassen in een echt project.
         Waar schrijven we wel unit tests voor? Waar schrijven we geen unit test voor? Dit zijn vragen waar elke ontwikkelaar een ander antwoord voor heeft. 
       </p>
 
       
       <p>
         De meningen over unit testen zijn enorm verdeeld. Ik kan je aanraden om het onderstaande artikel van <b>Martin Fowler</b> te lezen over unit testen.
-        Daarnaast zijn er nog meer interresante artikkelen te vinden over dit onderwerp.
+        Daarnaast zijn er nog meer interessante artikelen te vinden over dit onderwerp.
       </p>
   
       <section class="output">
@@ -54,7 +54,7 @@
         
         <p>
           Hoe weten we nu of we genoeg tests hebben geschreven?
-          De juiste tooling maken je het leven een stuk makkelijker.</p>
+          De juiste tooling maakt je het leven een stuk makkelijker.</p>
         
         <p>
           In visual studio heb je de mogelijkheid om te kijken hoeveel code je op dit moment test.
@@ -76,9 +76,9 @@
         </md-card>
         
         <p>
-          De code coverage ( in <b>%</b> ) verteld je iets over de kwaliteit van de code. 
+          De code coverage ( in <b>%</b> ) vertelt je iets over de kwaliteit van de code. 
           Normaliter wordt er een minimale code coverage aangehouden. 
-          Een professioneel software ontwikkel team zorgt er voor dat het toevoegen van nieuwe code 
+          Een professioneel software-ontwikkel-team zorgt er voor dat het toevoegen van nieuwe code 
           er automatisch wordt gecontroleerd of de code coverage nog wel hoog genoeg is. 
           Is dit niet het geval dan 'breekt de build' (dit is het zelfde als het niet compileren van code).
         <p>
@@ -120,19 +120,19 @@
      
       <p>
         Als je software aan het schrijven bent zullen klasse met elkaar gaan communiceren.
-        Hierdoor worden deze klasse afhankelijk van elkaar. Dit noemen ze <b>Tight coupling</b>.
+        Hierdoor worden deze klassen afhankelijk van elkaar. Dit noemen ze <b>Tight coupling</b>.
        </p>
        
        <p>
-         Als we nu 1 klasse gaan testen, roept deze klasse weer 2 andere klasse. Als de test nu faalt, weten we niet of dit komt door de code in de
-         klasse die we aan het testen zijn, of de code van een van de klasse waar ons object mee communiceert.
+         Als we nu 1 klasse gaan testen, roept deze klasse weer 2 andere klassen. Als de test nu faalt, weten we niet of dit komt door de code in de
+         klasse die we aan het testen zijn, of de code van een van de klassen waarmee ons object communiceert.
        </p>
        
        <img src="onderwerp/testing/img/isolation.png" width="100%">
        
        <p>
          Dit kunnen we voorkomen door objecten in de code te vervangen door een <b>stub</b>. 
-         Hiermee maken we een een nieuwe klasse die voldoet aan de interface waar onze 'te teste' klasse afhankelijk van is.
+         Hiermee maken we een een nieuwe klasse die voldoet aan de interface waar onze 'te testen' klasse afhankelijk van is.
        </p>
           
        <p>
@@ -181,7 +181,7 @@ stafMock.Verify(s => s.rechts(), Times.Once);
         <h3>Mocking Frameworks</h3>
         
         <p>
-          Je kan zelf voor alle klasse wie je wilt mocken een nieuwe klasse schrijven, maar dit kan ook een stuk makkelijker.
+          Je kunt zelf voor alle klassen die je wilt mocken een nieuwe klasse schrijven, maar dit kan ook een stuk makkelijker.
           Via de <b>Nuget Package Manager</b> is het heel eenvoudig om een mocking framework te installeren.
           Hieronder volgt een lijst van mocking frameworks, maar ik kan je aanraden om <a target="_blank" href="https://github.com/Moq/moq4">Moq</a> te gebruiken.
         </p>
