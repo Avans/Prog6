@@ -107,9 +107,29 @@
 			
 			<md-slider flex ng-model="level" min="0" max="{{realHeight}}" aria-label="level" class="md-primary">
 			</md-slider>
-				
-		
-     
-     
+
       </md-card>
+	  
+	  <section class="max-sized"  ng-controller="ppLeaderboardCtrl" ng-init="getTopTen()">
+		<md-card>
+		<md-toolbar class="md-theme-indigo">
+			<h1 class="md-toolbar-tools">Top 10</h1>
+		</md-toolbar>
+		<md-card-content>
+			<table class="leaderboard">
+				<thead>
+					<tr><td>#</td><td>Naam</td><td>Avans punten</td></tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users">
+						<td>{{$index + 1}}</td>
+						<td>{{user.name}}</td>
+						<td>{{user.points}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</md-card-content>
+		</md-card>
+	</section>
+
   </section>
