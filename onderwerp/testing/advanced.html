@@ -159,10 +159,10 @@
         </md-toolbar>
         <md-card-content>
         <pre class="prettyprint linenums">
-//1. Arrange
-List<String> woorden = new List<String>() { "ban", "da", "ladik"}; 
-List<String> ing = new List<String>() { "??" };
-Mock<Toverstaf> stafMock = new Mock<Toverstaf>();
+ //1. Arrange
+List<String> woorden = new List<String>() { "Flim", "Flam", "Fluister" };
+List<String> ing = new List<String>() { "???" };
+Mock<IToverstaf> stafMock = new Mock<IToverstaf>();
 Tovenaar t = new Tovenaar(stafMock.Object);
 
 //2. Act
@@ -170,8 +170,9 @@ String result = t.Toverspreuk(ing, woorden);
 
 //3. Assert
 //Controlleer of de tovernaar de juiste bewegingen maakt
-stafMock.Verify(s => s.links(), Times.Once);
-stafMock.Verify(s => s.rechts(), Times.Once);
+stafMock.Verify(s => s.Links(), Times.Once);
+stafMock.Verify(s => s.Rechts(), Times.Once);
+Assert.AreEqual("Er was licht, en hij zag dat het goed was!", result);
 </pre>
         </md-card-content>
       </md-card>
