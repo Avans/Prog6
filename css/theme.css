@@ -51,6 +51,10 @@ Assignment style
 .link{text-decoration: underline;color: #0000FF;}
 .link:hover{cursor: pointer;}
 
+.md-actions.navigate{
+	border-top:1px solid black;
+}
+
 @media screen and (min-width: 960px) {
     .md-sidenav-left{
 		background-color: transparent;

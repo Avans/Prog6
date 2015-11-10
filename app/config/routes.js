@@ -32,6 +32,8 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         addState('testingAdvanced');
         //patterns
         addState('patternsIntroductie');
+        addState('patternsDependency');
+        addState('patternsRepository');
         //Wcf
         addState('wcfIntroductie');
         //Mvc

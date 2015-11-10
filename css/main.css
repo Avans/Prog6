@@ -1,10 +1,10 @@
 /** Assignments **/
 
 .assignment{ margin-bottom:22px; }
-.assignment .header{ padding:16px; color:white; position:relative;}
-.assignment .header h2{ font-size:36px; margin-bottom:5px;}
-.assignment .header .points{
-	padding:15px;
+.header{ padding:16px; color:white; position:relative;}
+.header h2{ font-size:36px; margin-bottom:5px;}
+.header .points{
+	padding:15px;`
 	background-color:white;
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
 	border-radius: 50%; font-size:22px;
@@ -123,6 +123,17 @@
 	border:2px solid white;
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
 }
+
+.hoverTitle{
+	position:absolute;
+	
+}
+
+.center{
+	text-align: center;
+}
+
+
 
 
 /** My .NET code prittefy styles **/
