@@ -26,5 +26,11 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 		return $scope.level < (value + 100) && $scope.level > (value - 100);
 	};
 	
+	$scope.getSrcset = function(img){
+		
+		var root = "default/img/";
+		return root + img + "_small.png 600w, " + root + img + "_medium.pn 900w, " + root + img + "_large.png 1200w";
+	}
+	
 	
 };

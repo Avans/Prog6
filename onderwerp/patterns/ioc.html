@@ -1,0 +1,104 @@
+<md-toolbar class="md-theme-indigo">
+	<h1 class="md-toolbar-tools">Patterns</h1>
+</md-toolbar>
+
+<section class="md-padding max-sized">
+    <article class="md-padding">
+        <h3>Inversion Of Control</h3>
+        <p>
+           Wat een hippe term, "Inversion of Control". Maar wat betekent dit het?  
+        </p>
+        <p>
+            Inversion of Control (IoC) betekent dat objecten niet verantwoordelijk zijn voor de creatie van andere objecten
+            waar zij een afhankelijkheid van hebben.
+            In plaats daarvan krijgen zij deze objecten van een externe bron (bijv. een XAML config file).
+        </p>
+        <p>
+            Neem als voorbeeld een View Model in een WPF applicatie. Dit View Model moet vaak zijn data vaak uit een persistent store halen 
+            zoals een database. De verantwoordelijkheid voor het ophalen van deze data zit dan bijvoorbeeld in een <strong>Repository</strong>. 
+        </p>
+    </article>
+    
+    <md-card>
+        <md-toolbar>
+        <h1 class="md-toolbar-tools">Example: Repository in Viewmodel</h1>
+        </md-toolbar>
+        <md-card-content>
+            <pre  class="prettyprint linenums">
+public class MainViewModel : ViewModelBase
+{
+    private ICarRepository _carRepository;
+
+    public ObservableCollection&lt;CarVM&gt; MyCars { get; set; }
+
+    public MainViewModel(ICarRepository carRepository)
+    {
+        this._carRepository = new DummyCarRepository();
+        var cars = _carRepository.GetAllCars().Where(c =&gt; !c.Actief).ToList();
+        this.MyCars = new ObservableCollection&lt;CarVM&gt;(cars.Select(c =&gt; new CarVM(c)));
+    }
+}</pre>
+        </md-card-content>
+    </md-card>
+    
+    <article class="md-padding">
+        <p>
+            Volgens de principes van IOC mag er nu geen instantie van het 
+            interface <strong>ICarRepository</strong> gemaakt worden in de klasse <strong>MainViewModel</strong>. 
+            De verantwoordelijkheid voor deze initialisatie moet naar een andere klasse worden verplaatst.
+        </p>
+        
+        <p>
+            IOC is dus het verplaatsen van verantwoordelijkheid. 
+            Een manier om dit te doen is <strong><a  ui-sref="patternsDependency">Dependency Injection</a></strong>.
+        </p>
+        
+        <section class="">
+            <img src="onderwerp/patterns/img/SOCDl.png" alt="IOC + DI"/>
+        </section>
+    </article>
+    
+        
+
+    <md-card>
+        <md-toolbar class="md-warn">
+        <h1 class="md-toolbar-tools">Disclaimer</h1>
+        </md-toolbar>
+        <md-card-content>
+            <p>
+                Het principe achter IOC is zeer breed toepasbaar. 
+                De toepassingen van IOC zul je daarentegen bijna altijd tegen komen via de implementatie van een ander software patroon. 
+                Het nut van deze patronen word pas duidelijk bij het bouwen van een grootschalige software applicatie. De voorbeelden
+                tijdens de workshops zullen nooit zo groot zijn dat het software patroon echt tot zijn recht komt.     
+            </p>
+        </md-card-content>
+    </md-card>
+       
+    <article class="md-padding">
+        <h3>Extra infomatie</h3>
+        <ul>
+            <li><a target="_blank" href="http://msdn.microsoft.com/en-us/library/aa973811.aspx">http://msdn.microsoft.com/en-us/library/aa973811.aspx</a></li>
+            
+            <li><a target="_blank" href="http://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection">http://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection</a></li>
+            <li><a target="_blank" href="http://martinfowler.com/articles/injection.html#InversionOfControl">
+                http://martinfowler.com/articles/injection.html#InversionOfControl</a></li>
+        </ul>
+    </article>
+        
+    <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
+    <script>
+        
+      !function ($) {
+        $(function(){
+          window.prettyPrint && prettyPrint()   
+        })
+      }(window.jQuery)
+      
+    </script>
+    
+  </article>
+</section>
+
+    
+    
+  </body>

@@ -18,7 +18,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         .state('leaderboards', { url: '/leaderboards',  templateUrl:'default/leaderboards.html' })
         .state('profile', { url: '/profile',  templateUrl:'default/profile.html' })
         
-         .state('opdrachten1', { url: '/opdrachten/week1', templateUrl:'opdrachten/week1.html' } )
+        .state('opdrachten1', { url: '/opdrachten/week1', templateUrl:'opdrachten/week1.html' } )
         .state('opdrachten2', { url: '/opdrachten/week2', templateUrl:'opdrachten/week2.html' } )
         .state('opdrachten3', { url: '/opdrachten/week3', templateUrl:'opdrachten/week3.html' } )
         .state('opdrachten4', { url: '/opdrachten/week4', templateUrl:'opdrachten/week4.html' } )
@@ -34,6 +34,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         addState('patternsIntroductie');
         addState('patternsDependency');
         addState('patternsRepository');
+        addState('patternsIoc');
         //Wcf
         addState('wcfIntroductie');
         //Mvc
