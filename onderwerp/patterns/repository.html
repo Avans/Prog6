@@ -5,7 +5,62 @@
 <section class="md-padding max-sized">
 
 
-  <article class="md-padding">
-      <h2>Repository pattern</h2>
-  </article>
+  	<article class="md-padding">
+	  
+	  <h2>Repository pattern</h2>
+	  
+	  <p>
+		In veel applicaties maak je gebruik van een 'data source'.
+		Dit kan van alles zijn. Van <a target="_blank" href="https://nl.wikipedia.org/wiki/Extensible_Markup_Language">XML</a> tot 
+			een SQL database, van 
+			<a target="_blank" href="https://nl.wikipedia.org/wiki/JSON">JSON</a> tot een 
+			<a target="_blank" href="https://nl.wikipedia.org/wiki/Application_programming_interface">API</a> 
+	    Vaak willen we toegang hebben tot deze data en bijbehorende entiteiten via een CRUD model. 
+	  </p>
+	  
+	  <p>
+		Deze week gaan we kijken of we de verbinding met onze  persistent data store kunnen loskoppelen.
+		Het is voor onze controllers of viewmodels namelijk helemaal niet interresant of onze data uit een database, service of XML bestand komt.
+		Zolang we er maar bij kunnen. 
+	  </p>
+	  
+	  <p>
+		  Om dit te bereiken gebruiken we het <b>Repository pattern</b>. 
+	  </p>
+  	</article>
+	  
+
+	<section layout="row" >
+	<md-card class="md-padding" flex-gt-md="66">
+		<img src="onderwerp/patterns/img/repository.png" alt="Reposotiry pattern">
+	</md-card>
+	</section>
+	
+	<article class="md-padding">
+		
+	  <p>
+		We willen dus een Repostiory die een aansluiting kan hebben op verschillende Data Sources. 
+		De eerste stap is dus het maken van een IRepository interface met daarop de standaard CRUD operaties.
+	  </p>
+	  
+	  <p>
+		  Om het concept over Repository's uit te leggen nemen we als voorbeeld een applicatie die 'producten' kan beheren. 
+	  </p>
+	  
+	  
+	 
+	</article>
+	
+	<div class="md-actions navigate" layout="row" layout-align="center center">      
+      <md-button ui-sref="patternsIntroductie">
+          <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+		   <md-tooltip>Introductie</md-tooltip>
+      </md-button>
+      <md-button  ui-sref="patternsIoc" >
+          <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+          <md-tooltip>Inversion of control</md-tooltip>
+      </md-button>
+    </div>
+	
 </section>
+

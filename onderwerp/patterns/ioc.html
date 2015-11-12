@@ -3,8 +3,14 @@
 </md-toolbar>
 
 <section class="md-padding max-sized">
+    
+    
+
+    
     <article class="md-padding">
-        <h3>Inversion Of Control</h3>
+        
+        <h2>Inversion Of Control</h2>
+        
         <p>
            Wat een hippe term, "Inversion of Control". Maar wat betekent dit het?  
         </p>
@@ -97,7 +103,21 @@ public class MainViewModel : ViewModelBase
     </script>
     
   </article>
+  
+  <div class="md-actions navigate" layout="row" layout-align="center center">      
+      <md-button ui-sref="patternsRepository">
+          <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+		   <md-tooltip>Repository pattern</md-tooltip>
+      </md-button>
+      <md-button  ui-sref="patternsDependency" >
+          <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+          <md-tooltip>Dependency Injection</md-tooltip>
+      </md-button>
+  
+  </div>
 </section>
+
+
 
     
     

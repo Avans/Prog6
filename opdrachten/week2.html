@@ -2,21 +2,103 @@
 	<h1 class="md-toolbar-tools">Opdrachten week 2</h1>
 </md-toolbar>
 
-<section class="md-padding max-sized">
-    <md-card>
-	  <md-toolbar class="md-theme-indigo">
-		<h1 class="md-toolbar-tools">Opdracht 1</h1>
-	  </md-toolbar>
-      <md-card-content>
-		
-        <p>
-          The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-          two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-        </p>
-      </md-card-content>
-      <div class="md-actions" layout="row" layout-align="end center">
-        <md-button>Actie 1</md-button>
-        <md-button>Actie 2</md-button>
-      </div>
-    </md-card>
+<section class="max-sized" >
+    
+    <article class="md-padding">
+    <md-card class="assignment normal">
+          <section class="header">
+            <h2 class="md-title">{{assignment.descr}}</h2>
+            <span class="completed">Completed by {{assignment.completedBy.length}} students</span>
+    
+            <span class="points">
+                {{assignment.points}}
+                <md-tooltip>Avans points</md-tooltip>
+            </span>  
+    
+          </section>
+          <md-card-content>
+          
+          <p>
+            In deze opdracht ga je oefenen met het Managed Extensibility Framework (MEF). 
+          </p>
+          
+          <p>
+            Maak een nieuwe Visual Solution met twee projecten:
+          </p>
+          <ol>
+            <li>NinjaMEF (een console applicatie)</li>
+            <li>NinjaMEF.Weapons (een class library project)</li>
+          </ol>
+          
+          <p>
+            Voeg aan beide projecten een referentie naar de .NET assembly System.ComponentModel.Composition toe 
+            en zorg dat de NinjaMEF.Weapons assembly als referentie wordt toegevoegd aan het NinjaMEF project.
+          </p>
+          
+          <p>
+            Maak in het NinjaMEF.Weapons project de interface IWeapon aan, deze ziet er als volgt uit:
+          </p>
+          
+          <md-card>
+            <md-card-content>
+              <pre  class="prettyprint linenums">
+    public interface IWeapon
+    {
+      string Strike();
+    }</pre>
+            </md-card-content>
+          </md-card>
+    
+          <p>
+            Maak in hetzelfde project ook minimaal drie weapon classes aan (bijv. Knife, Sword en Shuriken). Elk weapon class heeft de volgende eigenschappen:
+          </p>
+    
+          <ul>
+            <li>De class implementeert de interface IWeapon.</li>
+            <li>De implementatie van Strike is zeer eenvoudig en geeft alleen de zin: “Striked with  &lt;weapon name&gt; als string terug.</li>
+            <li>De class dient als MEF export voor IWeapon, gebruik hiervoor het MEF [Export] attribuut.</li>
+          </ul>
+          
+          <p>
+            Maak in het NinjaMEF project een class Ninia aan met de volgende eigenschappen:
+          </p>
+          
+          <ul>
+            <li>De Ninja class moet een lijst met weapons bevatten, de weapons worden echter niet door de Ninja class geïnitieerd! Daar gebruiken we MEF voor.
+          private IEnumerable &lt;IWeapon&gt; allWeapons;&lt;/IWeapon&gt;
+            </li>
+            <li>Gebruik het MEF attribute [ImportMany] voor het importeren van de weapons.</li>
+            <li>De Ninja class heeft een void method Attack(). De implementatie van deze method is dat deze door de 
+              lijst met weapons itereert en voor elk weapon de method Strike() aanroept en het resultaat (string) in de console toont.
+            </li>
+          </ul>
+          
+          <p>
+            Voer nu de volgende stappen uit in de program.cs file in het NinjaMEF project:
+          </p>
+          
+          <ol>
+            <li>Maak een MEF AssemblyCatalog aan die alle weapons uit de NinjaMEF.Weapons assembly bevat.</li>
+            <li>Maak op basis van deze catalog een MEF CompositionContainer aan.</li>
+            <li>Maak een instantie aan van de Ninja class</li>
+            <li>Roep de ComposeParts method van de MEF container aan met als parameter het Ninja object. De weapons worden dan door MEF geinjecteerd in het ninja object.
+              <md-card>
+                <md-card-content>
+                  <pre  class="prettyprint linenums">
+container.ComposeParts(ninja);</pre>
+                </md-card-content>
+              </md-card>
+            </li>
+            <li>Roep nu de Attack method van het ninja object aan. Het resultaat zou er ongeveer als volgt uit moeten zien:</li>
+          </ol>
+    
+    
+          <section class="text-center">
+            <img src="onderwerp/patterns/img/weaponResult.png">
+          </section>
+          </md-card-content>
+        </md-card>
+    
+  
+   </article>
 </section>
