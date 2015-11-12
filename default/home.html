@@ -6,7 +6,7 @@
       <md-card>
 
 			
-			<section layout="row" layout-align="space-around center"> 
+			<section layout="row" layout-align="space-around center" hide-sm> 
 				<md-button class="md-primary" ng-click="toLevel(0)">WPF</md-button>
 				<md-button class="md-primary" ng-click="toLevel(30)">EF</md-button>
 				<md-button class="md-primary" ng-click="toLevel(70)">WCF</md-button>
@@ -25,7 +25,7 @@
 				<img src="default/img/WPF-AAN.png"  ng-srcset="{{getSrcset('WPF-AAN')}}" style="bottom: -{{1.6 * level }}">
 				<img src="default/img/wolk2.png"  ng-srcset="{{getSrcset('wolk2')}}"class="cloud reverse" style="bottom: -{{level}}">
 				
-				<section class="banner" id="wpf"  ng-show="isNear(0)" layout="row" >
+				<section class="banner" id="wpf"  ng-show="isNear(0)" layout="row" hide-sm>
 					
 					<section flex>
 					
@@ -45,13 +45,12 @@
 						</md-tooltip>
 					</ng-md-icon> 
 					
-					
-					
+
 				</section>
 				
-				<section class="banner" id="ef"  ng-show="isNear(30)" layout="row"  >
+				<section class="banner" id="ef"  ng-show="isNear(30)" layout="row"  hide-sm>
 					
-					<section flex>
+					<section >
 					
 						<p>Entity Framework</p>
 					
@@ -72,7 +71,7 @@
 					
 				</section>
 				
-				<section class="banner" id="wcf" ng-show="isNear(70)">
+				<section class="banner" id="wcf" ng-show="isNear(70)" hide-sm>
 					<p>Windows Communication Foundation</p>
 					
 					<ul>
@@ -83,7 +82,7 @@
 					
 				</section>
 				
-				<section class="banner" id="mvc" ng-show="isNear(100)" layout="row" layout>
+				<section class="banner" id="mvc" ng-show="isNear(100)" layout="row" hide-sm>
 					
 					<section flex>
 						<p>MVC</p>
@@ -110,7 +109,7 @@
 
       </md-card>
 	  
-	  <section class="max-sized"  ng-controller="ppLeaderboardCtrl" ng-init="getTopTen()">
+	  <section class="max-sized margin-top"  ng-controller="ppLeaderboardCtrl" ng-init="getTopTen()">
 		<md-card>
 		<md-toolbar class="md-theme-indigo">
 			<h1 class="md-toolbar-tools">Top 10</h1>
