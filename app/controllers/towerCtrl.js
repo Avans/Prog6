@@ -29,7 +29,7 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 	$scope.getSrcset = function(img){
 		
 		var root = "default/img/";
-		return root + img + "_small.png 600w, " + root + img + "_medium.pn 900w, " + root + img + "_large.png 1200w";
+		return root + img + "_small.png 600w, " + root + img + "_medium.png 900w, " + root + img + "_large.png 1200w";
 	}
 	
 	
