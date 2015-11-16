@@ -9,13 +9,10 @@
     <h2>Dependency injection</h2>
     
     
-    <h3>voordat ik uit kan leggen wat Dependency injection is, gaan </h3>
     <p>
-  
-    <p>
-        Dependency injection is een van de meest voorkomende implementaties van IOC*. De verantwoordelijkheid voor het aanmaken van 
-        een object binnen een ander object, wordt verplaatst door een instantie van het nieuwe object in het bestaande object te injecteren. Dit kan op 3 manieren:
-        
+        Dependency injection is een van de meest voorkomende implementaties van   <li><a ui-sref="patternsIoc">IOC</a></li>. De verantwoordelijkheid voor het aanmaken van 
+        een object binnen een ander object wordt <b>verplaatst</b door een instantie van het nieuwe object in het bestaande object te injecteren. Dit kan op 3 manieren:
+
 
     </p>
 
@@ -37,7 +34,7 @@
         In de opdracht over testen werd gebruik gemaakt van de klasse 
         <a target="_blank"  href="https://github.com/Avans/Prog6_TheWizard/blob/master/Wizard/Tovenaar.cs">Tovenaar</a> 
         met een referentie naar een <b>Tovestaf</b> en een <b>Kookpot</b>.
-        E was geen toegang naar het object <b>Koookpot</b> mogelijk omdat deze private was en aangemaakt werd in de constructor van de tovenaar. 
+        Er was geen toegang naar het object <b>Koookpot</b> mogelijk omdat deze private was en aangemaakt werd in de constructor van de tovenaar. 
         Via de regels van Dependency Injection kunnen we de verantwoordelijkheid voor het aanmaken van deze objecten verplaatsen.
         Er zijn 3 manieren om het ge&iuml;nitialiseerde object (kookpot) in de tovenaar te krijgen.
     </p>
@@ -46,11 +43,10 @@
       <md-card-content>
          <b>Constructor</b>
          <pre class="prettyprint linenums">
-public MainViewModel(ICarRepository carRepository)
+public Tovenaar(IToverstaf pStaf, Kookpot pKookpot)
 {
-    this._carRepository = carRepository;
-    var cars = carRepository.GetAllCars().Where(c =&gt; !c.Actief).ToList();
-    this.MyCars = new ObservableCollection&lt;CarVM&gt;(cars.Select(c =&gt; new CarVM(c)));
+    this._kookpot = pKookpot;
+    this._staf = pStaf;
 }</pre>
       </md-card-content>
     </md-card>
@@ -60,8 +56,7 @@ public MainViewModel(ICarRepository carRepository)
         <b>Property Setter</b>
     
         <pre class="prettyprint linenums">
-MainViewModel mvm = new MainViewModel();
-mvm.CarRepository = new DummyCarRepository();</pre>
+public Kookpot _kookpot { get; set; };</pre>
       </md-card-content>
     </md-card>
     
@@ -69,9 +64,9 @@ mvm.CarRepository = new DummyCarRepository();</pre>
       <md-card-content>
         <b>Method</b>
         <pre class="prettyprint linenums">
-public void SetRepository(ICarRepository carRepository)
+public void SetKookpot(Kookpot pKookpot)
 {
-    this._carRepository = carRepository;
+    this._kookpot = pKookpot;
 }
 </pre>
       </md-card-content>
@@ -84,33 +79,25 @@ public void SetRepository(ICarRepository carRepository)
 		Het basis principe achter Dependency injection is de verantwoordelijkheid voor het aanmaken van objecten verhuizen naar een andere plek. 
 		Het .NET framework biedt hier een aantal oplossingen voor. Bijvoorbeeld het <strong>Managed Extensibility Framework (MEF)</strong>.
 		Het MEF bestaat uit 3 onderdelen. 
-		<ul>
-			<li>Container</li>
-			<li>Imports</li>
-			<li>Exports</li>
-		</ul>
+     </p>
+     
+    <ul>
+        <li>Container</li>
+        <li>Imports</li>
+        <li>Exports</li>
+    </ul>
 
-	</p>
-        </div>
-
-    <div class="bs-callout bs-callout-info  row">
-        <div class="col-md-6">
-         
-            
+    <md-card>
+      <md-card-content> 
             <pre class="prettyprint linenums">
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;</pre>
+      </md-card-content>
+    </md-card>
             
             
-        </div>
-        <div class="col-md-6 text-center">
-            <img src="onderwerp/patterns/img/composition.png" alt="composition" />
-        </div>
-    </div>
-
-    
-    <div class="row">
-        
+     <h4>Reference</h4>
+     <img src="onderwerp/patterns/img/composition.png" alt="composition" />
 
     <h3>Container</h3> 
         
@@ -121,23 +108,31 @@ using System.ComponentModel.Composition.Hosting;</pre>
         <strong>CompositionContainer</strong>
     </p>
     
+
     <p>
         Vervolgens kun je via een <strong>ComposeParts</strong> methode een object vullen met de ge&iuml;mporteerde classes.
     </p>
   
-    <pre class="prettyprint linenums">
+     <md-card>
+      <md-card-content> 
+          <pre class="prettyprint linenums">
 var catalog = new AssemblyCatalog(Assembly.GetAssembly(typeof(IInstrument)));
 var container = new CompositionContainer(catalog);
 var rockBand = new RockBand();
 container.ComposeParts(rockBand);</pre>
-                 
+      </md-card-content>
+     </md-card>    
 
-     <div class="col-md-6">
+
             
-        <h3>Import</h3>
+    <h3>Import</h3>
 
+    <md-card>
+      <md-card-content> 
         <pre class="prettyprint linenums">
 [ImportMany(typeof(IInstrument))]</pre>
+      </md-card-content>
+    </md-card>
           
         <p>
            Het ImportMany attribuut wordt op een property van het type List geplaatst. 
@@ -151,12 +146,15 @@ container.ComposeParts(rockBand);</pre>
             attribuut om een object te initialiseren wat geen lijst is. 
         </p>
 
-    </div>
-    <div class="col-md-6">
-            
+ 
         <h3>Export</h3>
+        
+       <md-card>
+        <md-card-content>     
                      <pre class="prettyprint linenums">
 [Export(typeof(IInstrument))]</pre>
+        </md-card-content>
+       </md-card>
                      
 
         <p>
@@ -165,20 +163,22 @@ container.ComposeParts(rockBand);</pre>
              in de catalogus komt te staan.
         </p>
 
-    </div>
 
-    <h4>Dependency Injection Frameworks</h4>
+
+    <h3>Dependency Injection Frameworks</h3>
     
     <p>
         Naast het <strong>MEF</strong> wat onderdeel is van het .NET framework zijn er nog meer Dependency Injection Frameworks. 
         Te veel om op te noemen! 
     </p>
 
-    <h3>Bronnen</h3>
+    <h3>Extra infomatie</h3>
     <ul>
         <li><a target="_blank" href="http://tutorials.jenkov.com/dependency-injection/the-opportunities-missed-by-annotation-based-dependency-injection.html">http://tutorials.jenkov.com/dependency-injection/the-opportunities-missed-by-annotation-based-dependency-injection.html</a></li>
     </ul>
     
+    
+      </article>
             
     <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
     <script>
@@ -191,8 +191,7 @@ container.ComposeParts(rockBand);</pre>
       
     </script>
     
-	  
-	  http://www.codeproject.com/Tips/572761/Generic-repository-pattern-using-EF-with-Dependenc
+
   </article>
   
    <div class="md-actions navigate" layout="row" layout-align="center center">      

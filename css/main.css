@@ -18,6 +18,7 @@
 /*.assignment.easy .header{ background-color:#7FBA00; }*/
 .assignment.easy .header{ background-color:#259b24; }
 .assignment.normal .header{ background-color:#FFB901; }
+.assignment.hard .header{ background-color:rgb(244,67,54); }
 .assignment.workshop .header{ background-color:#01A4EF; }
 /** Assignment end **/
 

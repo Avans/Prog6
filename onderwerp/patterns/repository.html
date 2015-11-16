@@ -8,7 +8,7 @@
   	<article class="md-padding">
 	  
 	  <h2>Repository pattern</h2>
-	  
+	  	  
 	  <p>
 		In veel applicaties maak je gebruik van een 'data source'.
 		Dit kan van alles zijn. Van <a target="_blank" href="https://nl.wikipedia.org/wiki/Extensible_Markup_Language">XML</a> tot 
@@ -20,36 +20,155 @@
 	  
 	  <p>
 		Deze week gaan we kijken of we de verbinding met onze  persistent data store kunnen loskoppelen.
-		Het is voor onze controllers of viewmodels namelijk helemaal niet interresant of onze data uit een database, service of XML bestand komt.
+		Het is voor onze controllers of viewmodels namelijk helemaal niet interessant of onze data uit een database, service of XML bestand komt.
 		Zolang we er maar bij kunnen. 
 	  </p>
 	  
 	  <p>
 		  Om dit te bereiken gebruiken we het <b>Repository pattern</b>. 
 	  </p>
-  	</article>
+
 	  
 
-	<section layout="row" >
-	<md-card class="md-padding" flex-gt-md="66">
-		<img src="onderwerp/patterns/img/repository.png" alt="Reposotiry pattern">
-	</md-card>
-	</section>
+		<section layout="row" >
+		<md-card class="md-padding" flex-gt-md="66">
+			<img src="onderwerp/patterns/img/repository.png" alt="Reposotiry pattern">
+		</md-card>
+		</section>
 	
-	<article class="md-padding">
+
+	  <p>
+		We willen een Repostiory die een aansluiting kan hebben op verschillende Data Sources. 
+		De eerste stap is het maken van een interface met daarop de standaard CRUD operaties.
+	  </p>
+	  
+	  <p>
+		Omdat we verschillende implementaties kunnen hebben van dit interface kunnen we dus in verschillende stappen onze Repository opbouwen. 
+		Wij gaan niet verder dan de tweede stap.  
+	  </p>
+	  
+	  <ol>
+		<li><b class="link"ng-click="scrollTo('dummy')">DummyRepository</b> – Een implementatie die nep data terug geeft</li>
+		<li><b class="link" ng-click="scrollTo('entity')">EntityRepository</b>  – Een imlementatie die gebruik maakt van het Entity Framework. </li>
+		<li><a >ServiceRepository</b>  – Hier gaan we volgende week mee aan de slag!</li>
 		
-	  <p>
-		We willen dus een Repostiory die een aansluiting kan hebben op verschillende Data Sources. 
-		De eerste stap is dus het maken van een IRepository interface met daarop de standaard CRUD operaties.
-	  </p>
+	  </ol>
 	  
-	  <p>
-		  Om het concept over Repository's uit te leggen nemen we als voorbeeld een applicatie die 'producten' kan beheren. 
-	  </p>
+	  <p>De implementatie van je interface komt er dan zo uit te zien:</p>
 	  
 	  
-	 
-	</article>
+	<md-card>
+		  <md-card-content>
+	  		<pre class="prettyprint linenums">
+namespace DomeinModel.Repository
+{
+  public interface IProductRepository
+  {
+    Product Get();
+    List&lt;Product&gt; GetAll();
+    Product Create(Product product);
+    Product Update(Product product);
+    void Delete(Product product);
+  }
+}</pre>
+		  </md-card-content>
+	  </md-card>
+	  
+	  
+	
+
+		<p>
+			Je maakt normaliter één Repository per entiteit. 
+			De Repository die hier boven staat is verantwoordelijk voor de toegang tot de entiteit Product. 
+			Vandaar de naam ProductRepository.
+		</p>
+		
+	 </article>
+	 <article class="md-padding"  id="dummy">	  
+			  
+		<h3>1. DummyRepository</h3>
+			  
+		<p>
+			Om onze Repository te testen maken we een ‘dummy’ implementatie van onze IProductRepository. 
+			De reden waarom we dit doen is omdat we zo snel mogelijk resultaat willen zien op ons beeldscherm. 
+			Dit valt onder de categorie Rapid Application Development (RAD).
+		</p>
+			 
+
+	  
+		<md-card>
+		  <md-card-content>
+	  		<pre class="prettyprint linenums">
+public class DummyProductRepository : IProductRepository
+{
+  private  List&lt;Product&gt; products;
+	
+  public DummyProductRepository()
+  {              
+    products = new  List&lt;Product&gt;();
+    products.Add(new Product { Name = "Paprika" });
+    products.Add(new Product { Name = "Ui" });
+    products.Add(new Product { Name = "Tomaat" });
+  }
+	
+  public IEnumerable<Product> GetAll()
+  {
+    return products;
+  }
+}</pre>
+		</md-card-content>
+	   </md-card>
+	   
+
+	   	<p>
+		   Alle Functies die we hebben gedefinieerd op het interface moeten ook terug komen in de implementatie van de interface (DummyProductRepository). 
+		   In het voorbeeld is alleen de <b>GetAll</b> functie geimplementeerd. 
+		</p>
+		
+	  </article>
+	  
+	  <article class="md-padding"  id="entity">	  
+	    <h3>2. EntityRepository</h3>
+			  
+		<p>
+			Als we klaar zijn om onze applicatie aan te sluiten op een database willen we een implementatie van het <b>IProductRepository</b>
+			met als data source een SQL database. Zoals vorig blok gaan we de communicatie met deze database afhandelen met <b>Entity Framework</b>.
+		</p>
+		
+		<md-card>
+			<md-card-content>
+				<pre class="prettyprint linenums">
+public class EntityProductRepository : IProductRepository
+{
+  MijnEntityContext dbContext;
+
+  public EntityProductRepository(MijnEntityContext pDbContext)
+  {
+    dbContext = pDbContext;
+  }
+	
+  public List&lt;DomainModel.Productglt; GetAll()
+  {
+    return dbContext.Products.ToList();
+  }
+}</pre>
+			</md-card-content>
+		</md-card>
+		
+		<p>
+			Je ziet in het bovestaande voorbeeld dat de klasse <p>MijnEntityContext</p> meegegeven wordt via de constructor.
+			Op deze manier gebruiken al onze repository's een en dezelfde database context. 
+		</p>
+		
+		<p>
+			Het meegeven van een object via de <b>constructor</p> heet dependency injection. 
+			Voor we hier mee aan de slag gaan gaan we eerst kijken naar het onderwerp <p>Inversion of Control</p>.
+		</p>
+		
+		
+
+	
+		
 	
 	<div class="md-actions navigate" layout="row" layout-align="center center">      
       <md-button ui-sref="patternsIntroductie">
@@ -64,3 +183,15 @@
 	
 </section>
 
+
+           
+    <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
+    <script>
+        
+      !function ($) {
+        $(function(){
+          window.prettyPrint && prettyPrint()   
+        })
+      }(window.jQuery)
+      
+    </script>
