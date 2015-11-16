@@ -239,7 +239,7 @@ container.ComposeParts(ninja);
         
         <ol>
             <li>Een WPF applicatie</li>
-            <li>Een Class Library met hierin de POCO Post</li>
+            <li>Een Class Library met hierin de POCO Blog</li>
         </ol>
         
         <p>
@@ -248,15 +248,15 @@ container.ComposeParts(ninja);
         </p>
     
         <ul>
-            <li>Definieer een IPostRepository interface met de methods: GetAll, Add en Delete</li>
-            <li>Implementeer een DummyPostRepository, vul deze met minimaal 5 hardcoded blog posts</li>
-            <li>De klasse <b>MainViewModel</b> krijgt toegang tot de <b>IPostRepository</b> via de constructor.
+            <li>Definieer een IBlogRepository interface met de methods: GetAll, Add en Delete</li>
+            <li>Implementeer een DummyBlogRepository, vul deze met minimaal 5 hardcoded blog posts</li>
+            <li>De klasse <b>MainViewModel</b> krijgt toegang tot de <b>IBlogRepository</b> via de constructor.
          </ul>
            
          <h3>NinjectServiceLocator</h3>
             
          <p>
-             Nu is het aan jou de taak om ervoor te zorgen dat Ninject de juiste implementatie van het IPostRepository interface aan de viewmodels meegeeft.
+             Nu is het aan jou de taak om ervoor te zorgen dat Ninject de juiste implementatie van het IBlogRepository interface aan de viewmodels meegeeft.
              De Binding van de <b>DataContext</b> verwijst al naar de juiste klasse. 
              In de klasse <b>NinjectServiceLocator</b> zul de juiste <b>Ninject</b> logica moeten gaan implementeren.
              Lees goed door de documentatie van Ninject en kijk naar voorbeelden op het internet.
@@ -270,11 +270,11 @@ container.ComposeParts(ninja);
          <p>Maak de opdracht af door de onderstaande onderdelen toe te voegen.</p>
           
          <ul> 
-            <li>Maak 1 scherm waarmee je Post berichten kunt beheren</li>
+            <li>Maak 1 scherm waarmee je Blog berichten kunt beheren</li>
             <li>Maak de klasse  MainViewModel af door hier een ObservableCollection en bijbehorende commands aan toe te voegen</li>
             <li>Schrijf een unit test waarmee je test of de Add Action juist werkt</li>
             <li>Schrijf een unit test waarmee je test of de Delete Action juist werkt.</li>
-            <li><b>Bouw een EntityPostRepository die de posts ook echt opslaat in de database</b></li>
+            <li><b>Bouw een EntityBlogRepository die de Blog posts ook echt opslaat in de database</b></li>
         </ul>
             
            
