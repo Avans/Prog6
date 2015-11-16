@@ -8,10 +8,12 @@
   <article class="md-padding">
     <h2>Dependency injection</h2>
     
+
     
     <p>
         Dependency injection is een van de meest voorkomende implementaties van   <li><a ui-sref="patternsIoc">IOC</a></li>. De verantwoordelijkheid voor het aanmaken van 
         een object binnen een ander object wordt <b>verplaatst</b door een instantie van het nieuwe object in het bestaande object te injecteren. Dit kan op 3 manieren:
+
 
 
     </p>
@@ -33,8 +35,10 @@
     <p class="top-buffer">
         In de opdracht over testen werd gebruik gemaakt van de klasse 
         <a target="_blank"  href="https://github.com/Avans/Prog6_TheWizard/blob/master/Wizard/Tovenaar.cs">Tovenaar</a> 
-        met een referentie naar een <b>Tovestaf</b> en een <b>Kookpot</b>.
-        Er was geen toegang naar het object <b>Koookpot</b> mogelijk omdat deze private was en aangemaakt werd in de constructor van de tovenaar. 
+
+        met een referentie naar een <b>Toverstaf</b> en een <b>Kookpot</b>.
+        Er was geen toegang naar het object <b>Kookpot</b> mogelijk omdat deze private was en aangemaakt werd in de constructor van de tovenaar. 
+
         Via de regels van Dependency Injection kunnen we de verantwoordelijkheid voor het aanmaken van deze objecten verplaatsen.
         Er zijn 3 manieren om het ge&iuml;nitialiseerde object (kookpot) in de tovenaar te krijgen.
     </p>
@@ -76,7 +80,7 @@ public void SetKookpot(Kookpot pKookpot)
     <h3>Dependency Injection in .NET </h3>
 
 	<p>
-		Het basis principe achter Dependency injection is de verantwoordelijkheid voor het aanmaken van objecten verhuizen naar een andere plek. 
+		Het basisprincipe achter Dependency injection is het verhuizen van de verantwoordelijkheid voor het aanmaken van objecten, naar een andere plek. 
 		Het .NET framework biedt hier een aantal oplossingen voor. Bijvoorbeeld het <strong>Managed Extensibility Framework (MEF)</strong>.
 		Het MEF bestaat uit 3 onderdelen. 
      </p>
@@ -175,11 +179,15 @@ container.ComposeParts(rockBand);</pre>
     <h3>Extra infomatie</h3>
     <ul>
         <li><a target="_blank" href="http://tutorials.jenkov.com/dependency-injection/the-opportunities-missed-by-annotation-based-dependency-injection.html">http://tutorials.jenkov.com/dependency-injection/the-opportunities-missed-by-annotation-based-dependency-injection.html</a></li>
+		<li><a target="_blank" href="http://www.codeproject.com/Tips/572761/Generic-repository-pattern-using-EF-with-Dependenc">
+		http://www.codeproject.com/Tips/572761/Generic-repository-pattern-using-EF-with-Dependenc</a></li>
     </ul>
+
     
     
       </article>
             
+
     <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
     <script>
         
@@ -190,7 +198,7 @@ container.ComposeParts(rockBand);</pre>
       }(window.jQuery)
       
     </script>
-    
+
 
   </article>
   

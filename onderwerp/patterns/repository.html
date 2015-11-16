@@ -14,14 +14,14 @@
 		Dit kan van alles zijn. Van <a target="_blank" href="https://nl.wikipedia.org/wiki/Extensible_Markup_Language">XML</a> tot 
 			een SQL database, van 
 			<a target="_blank" href="https://nl.wikipedia.org/wiki/JSON">JSON</a> tot een 
-			<a target="_blank" href="https://nl.wikipedia.org/wiki/Application_programming_interface">API</a> 
-	    Vaak willen we toegang hebben tot deze data en bijbehorende entiteiten via een CRUD model. 
+			<a target="_blank" href="https://nl.wikipedia.org/wiki/Application_programming_interface">API</a>. Vaak willen we toegang hebben tot deze data en bijbehorende entiteiten via een CRUD model. 
 	  </p>
 	  
 	  <p>
-		Deze week gaan we kijken of we de verbinding met onze  persistent data store kunnen loskoppelen.
-		Het is voor onze controllers of viewmodels namelijk helemaal niet interessant of onze data uit een database, service of XML bestand komt.
-		Zolang we er maar bij kunnen. 
+
+		Deze week gaan we kijken of we de verbinding met onze &quot;persistent data store&quot; kunnen loskoppelen.
+		Het is voor onze controllers of viewmodels namelijk helemaal niet interessant of onze data uit een database, service of XML bestand komt, zolang we er maar bij kunnen. 
+
 	  </p>
 	  
 	  <p>
@@ -38,13 +38,14 @@
 	
 
 	  <p>
-		We willen een Repostiory die een aansluiting kan hebben op verschillende Data Sources. 
-		De eerste stap is het maken van een interface met daarop de standaard CRUD operaties.
+
+		We willen dus een Repostiory die een aansluiting kan hebben op verschillende Data Sources. 
+		De eerste stap is het maken van een IRepository interface met daarop de standaard CRUD operaties.
 	  </p>
 	  
 	  <p>
-		Omdat we verschillende implementaties kunnen hebben van dit interface kunnen we dus in verschillende stappen onze Repository opbouwen. 
-		Wij gaan niet verder dan de tweede stap.  
+		  Om het concept over Repository's uit te leggen nemen we als voorbeeld een applicatie die &quot;producten&quot; kan beheren. 
+
 	  </p>
 	  
 	  <ol>

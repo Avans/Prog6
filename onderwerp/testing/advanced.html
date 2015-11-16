@@ -169,7 +169,7 @@ Tovenaar t = new Tovenaar(stafMock.Object);
 String result = t.Toverspreuk(ing, woorden);
 
 //3. Assert
-//Controlleer of de tovernaar de juiste bewegingen maakt
+//Controleer of de tovenaar de juiste bewegingen maakt
 stafMock.Verify(s => s.Links(), Times.Once);
 stafMock.Verify(s => s.Rechts(), Times.Once);
 Assert.AreEqual("Er was licht, en hij zag dat het goed was!", result);
