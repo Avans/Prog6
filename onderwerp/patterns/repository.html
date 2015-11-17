@@ -148,7 +148,7 @@ public class EntityProductRepository : IProductRepository
     dbContext = pDbContext;
   }
 	
-  public List&lt;DomainModel.Productglt; GetAll()
+  public List&lt;DomainModel.Product&gt; GetAll()
   {
     return dbContext.Products.ToList();
   }
@@ -157,7 +157,7 @@ public class EntityProductRepository : IProductRepository
 		</md-card>
 		
 		<p>
-			Je ziet in het bovestaande voorbeeld dat de klasse <p>MijnEntityContext</p> meegegeven wordt via de constructor.
+			Je ziet in het bovestaande voorbeeld dat de klasse <b>MijnEntityContext</b> meegegeven wordt via de constructor.
 			Op deze manier gebruiken al onze repository's een en dezelfde database context. 
 		</p>
 		
