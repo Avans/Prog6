@@ -46,7 +46,7 @@
     <md-card>
       <md-card-content>
          <b>Constructor</b>
-         <pre class="prettyprint linenums">
+       <pre class="ppPrettyPrint">
 public Tovenaar(IToverstaf pStaf, Kookpot pKookpot)
 {
     this._kookpot = pKookpot;
@@ -59,7 +59,7 @@ public Tovenaar(IToverstaf pStaf, Kookpot pKookpot)
       <md-card-content>
         <b>Property Setter</b>
     
-        <pre class="prettyprint linenums">
+        <pre class="ppPrettyPrint">
 public Kookpot _kookpot { get; set; };</pre>
       </md-card-content>
     </md-card>
@@ -67,7 +67,7 @@ public Kookpot _kookpot { get; set; };</pre>
     <md-card>
       <md-card-content>
         <b>Method</b>
-        <pre class="prettyprint linenums">
+        <pre class="ppPrettyPrint">
 public void SetKookpot(Kookpot pKookpot)
 {
     this._kookpot = pKookpot;
@@ -93,7 +93,7 @@ public void SetKookpot(Kookpot pKookpot)
 
     <md-card>
       <md-card-content> 
-            <pre class="prettyprint linenums">
+            <pre class="ppPrettyPrint">
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;</pre>
       </md-card-content>
@@ -119,7 +119,7 @@ using System.ComponentModel.Composition.Hosting;</pre>
   
      <md-card>
       <md-card-content> 
-          <pre class="prettyprint linenums">
+        <pre class="ppPrettyPrint">
 var catalog = new AssemblyCatalog(Assembly.GetAssembly(typeof(IInstrument)));
 var container = new CompositionContainer(catalog);
 var rockBand = new RockBand();
@@ -133,7 +133,7 @@ container.ComposeParts(rockBand);</pre>
 
     <md-card>
       <md-card-content> 
-        <pre class="prettyprint linenums">
+        <pre class="ppPrettyPrint">
 [ImportMany(typeof(IInstrument))]</pre>
       </md-card-content>
     </md-card>
@@ -155,7 +155,7 @@ container.ComposeParts(rockBand);</pre>
         
        <md-card>
         <md-card-content>     
-                     <pre class="prettyprint linenums">
+           <pre class="ppPrettyPrint">
 [Export(typeof(IInstrument))]</pre>
         </md-card-content>
        </md-card>
@@ -183,23 +183,9 @@ container.ComposeParts(rockBand);</pre>
 		http://www.codeproject.com/Tips/572761/Generic-repository-pattern-using-EF-with-Dependenc</a></li>
     </ul>
 
-    
-    
+ 
       </article>
             
-
-    <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
-    <script>
-        
-      !function ($) {
-        $(function(){
-          window.prettyPrint && prettyPrint()   
-        })
-      }(window.jQuery)
-      
-    </script>
-
-
   </article>
   
    <div class="md-actions navigate" layout="row" layout-align="center center">      

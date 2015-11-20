@@ -60,7 +60,7 @@
 	  
 	<md-card>
 		  <md-card-content>
-	  		<pre class="prettyprint linenums">
+	  		<pre class="ppPrettyPrint">
 namespace DomeinModel.Repository
 {
   public interface IProductRepository
@@ -99,7 +99,7 @@ namespace DomeinModel.Repository
 	  
 		<md-card>
 		  <md-card-content>
-	  		<pre class="prettyprint linenums">
+	  		<pre class="ppPrettyPrint">
 public class DummyProductRepository : IProductRepository
 {
   private  List&lt;Product&gt; products;
@@ -138,7 +138,7 @@ public class DummyProductRepository : IProductRepository
 		
 		<md-card>
 			<md-card-content>
-				<pre class="prettyprint linenums">
+				<pre class="ppPrettyPrint">
 public class EntityProductRepository : IProductRepository
 {
   MijnEntityContext dbContext;
@@ -183,16 +183,3 @@ public class EntityProductRepository : IProductRepository
     </div>
 	
 </section>
-
-
-           
-    <!-- Deze regel javascript hebben we nodig voor het 'prettifyen' van onze code snippits -->
-    <script>
-        
-      !function ($) {
-        $(function(){
-          window.prettyPrint && prettyPrint()   
-        })
-      }(window.jQuery)
-      
-    </script>
