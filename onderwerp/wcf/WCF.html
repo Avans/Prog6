@@ -5,17 +5,60 @@
 <section class="md-padding max-sized">
   <article class="md-padding">
         <h2>WCF</h2>
+        
+        <p>
+          De Windows Communication Foundation (of WCF) is een verzameling van .NET-technologieën voor het bouwen en het gebruiken van netwerksystemen.
+        </p>
+        <p>
+          Via deze technologieën is het mogelijk om een web service te bouwen en te hosten. Hierna kunnen andere applicaties met deze web service communiceren.
+          Visual studio kan deze webservice voor je hosten en biedt je een <b>WCF Test Client</b> applicatie om te testen of je webservice goed werkt. 
+        </p>
+        
+ 
+        <md-card>
+          <img src="onderwerp/wcf/img/wcf.png" alt="WCF">
+        </md-card>
+        
+        <p>
+          Het template project in Visual Studio voor een WCF applicatie bevat standaard de volgende onderdelen. 
+        </p>
+        
+        <ul>
+          <li>Een service interface</li>
+          <li>Een service implementatie van deze interface</li> 
+          <li>Een datacontract waar de service gebruik van maakt</li>
+        </ul>
+        
+        <h3>Service Interface</h3>
+        [ServiceContract]
+         
+        <md-card>
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Operation Contract </h1>
+          </md-toolbar>
+       
+          <md-card-content>
+            <pre>
+        [OperationContract]
+        
+        
+        
+        [DataContract]
+          
+        [DataMember]
+        
+        
   </article>
 </section>
 
 
-  <div class="md-actions navigate" layout="row" layout-align="center center">      
-      <md-button  ui-sref="wcfIntroductie" >
-          <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
-		     <md-tooltip>Introductie</md-tooltip>
-      </md-button>
-      <md-button  ui-sref="wcfAzure" >
-          <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
-          <md-tooltip>Azure</md-tooltip>
-      </md-button>
-    </div>
+<div class="md-actions navigate" layout="row" layout-align="center center">      
+    <md-button  ui-sref="wcfIntroductie" >
+        <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+        <md-tooltip>Introductie</md-tooltip>
+    </md-button>
+    <md-button  ui-sref="wcfAzure" >
+        <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+        <md-tooltip>Azure</md-tooltip>
+    </md-button>
+  </div>
