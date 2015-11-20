@@ -37,6 +37,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         addState('patternsIoc');
         //Wcf
         addState('wcfIntroductie');
+        addState('wcfWCF');
         //Mvc
         addState('mvcIntroductie');
 
