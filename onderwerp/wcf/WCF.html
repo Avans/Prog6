@@ -30,25 +30,94 @@
         </ul>
         
         <h3>Service Interface</h3>
-        [ServiceContract]
+        
+        <p>Om een service beschikbaar te maken voor andere applicaties hebben we een service interface nodig</p>
+     
+        <p>
+          Dit is een interface met bijbehorende <b>ServiceContract</b> attribuut. 
+          Met dit attribuut geef je aan dat deze service beschikbaar is voor client applicaties om te consumen.
+          Hoe je een service moet consumeren komen we later op terug. 
+         </p>
          
-        <md-card>
-          <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Operation Contract </h1>
-          </md-toolbar>
-       
+         <md-card>
           <md-card-content>
-            <pre>
-        [OperationContract]
+            <pre class="ppPrettyPrint">
+[ServiceContract]
+public interface IChatService
+{
+
+    [OperationContract]
+    Message[] SendMessage(Message message);
+
+    [OperationContract]
+    Message[] GetMessages();
+}</pre>
+          </md-card-content>
+        </md-card>
+         
+         <p>
+           Een service heeft een aantal methodes, zogenoemde <b>contracts</b>.
+           Dit zijn methodes waar we later gebruik van kunnen maken. 
+           Deze methodes moet je labelen met een <b>Operation Contract</b> attribuut.
+         </p>
+         
+         <p>
+           De implementatie van deze interface is een <b>.svc</b> file. Als je de file opent ziet deze er uit als een normale klasse.
+           WCF zal deze implementatie gebruiken in de service die hij gaat hosten.
+         </p>
+         
+         
+         <h3>Service Data</h3>
+         
+         <p>
+           Naast de methodes die we kunnen gebruiken op een service, komen er vaak ook complexe data objeecten bij kijken.
+           Ook deze objecten kun je toegankelijk maken voor client applicaties. 
+           De klasse die je toegankelijk wilt maken voor deze applicaties worden gelabeld met een <b>Data Contract</b> attribuut.
+         </p>
+             
+         <p>Daarna kun je kiezen welke properties je van dit object beschikbaar wilt maken. 
+           Dit doe je met het bijbehorende <b>Data Member</b> attribuut.
+         </p>
+     
+        <md-card>
+          <md-card-content>
+            <pre class="ppPrettyPrint">
+[DataContract]
+public class Message
+{
+
+    [DataMember]
+    public string Content { get; set; }
+
+    [DataMember]
+    public DateTime TimeStamp { get; set; }
+
+    [DataMember]
+    public string User { get; set; }
+}</pre>
+          </md-card-content>
+        </md-card>
         
         
+        <p>
+          Als alle service, operation en data contracten geformuleerd zijn, kunnen we onze applicatie gaan testen. 
+          Gebruik hiervoor de <b>WCF test client</b>
+        </p>
         
-        [DataContract]
-          
-        [DataMember]
+        <p>
+          Deze client start niet altijd op als je de service runt. Dit gebeurd alleen als je de <b>servicenaam.svc</b> file selecteerd voordat je de applicatie start.
+          Daarnaast zijn er andere manieren om de WCF test client te starten. 
+        </p>
         
+        <p>
+          <a target="_blank" href="http://blogs.msdn.com/b/wcftoolsteamblog/archive/2010/01/04/tips-for-launching-wcf-test-client.aspx">http://blogs.msdn.com/b/wcftoolsteamblog/archive/2010/01/04/tips-for-launching-wcf-test-client.aspx</a>
+        </p>
+        
+        <p>Werkt alles naar behoren? Dan kunnen we de service gaan <a ui-sref="wcfAzure">hosten</a>.</p>
         
   </article>
+  
+  
 </section>
 
 

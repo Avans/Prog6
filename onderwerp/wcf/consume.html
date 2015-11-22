@@ -1,0 +1,63 @@
+<md-toolbar class="md-theme-indigo">
+	<h1 class="md-toolbar-tools">WCF</h1>
+</md-toolbar>
+
+<section class="md-padding max-sized">
+  <article class="md-padding">
+        <h2>Service consumeren</h2>
+		
+		<p>
+			Ook voor het consumeren van onze webservice gaan we gebruik maken van een wizard in Visual studio. 
+			Via het mapje <b>Refrences</b> is het mogeleijk een service refrence toe te voegen. 
+			Visual studio zal kijkenn of er op een bepaalde url een webservice draait, en of hij deze kan gebruiken. 
+			De rest gebeurd vanzelf!
+		</p>
+		
+		<md-card layout="row" layout-sm="column">
+			<section flex class="md-padding">
+				<img src="onderwerp/wcf/img/refrence.png" >
+			</section>
+			<section flex class="md-padding">
+				<img src="onderwerp/wcf/img/refrence2.png" >
+			</section>
+		</md-card>
+		
+		<p>
+			Als de toevoegen van de service gelukt is kunnen we de service gaan aanroepen. 
+			Dit doen we via de klasse die visual studio voor ons heeft aangemaakt. 
+		</p>
+		
+		<p>
+			Het is mogelijk dat je de service helemaal veranded, door bijvoorbeeld methode namen te veranderen. 
+			In dit geval moeten we onze <b>service refrence</b> helaas ook updaten. 
+			Dit kan eenvoudig via een update knop op de service. 
+		</p>
+		
+
+		<img src="onderwerp/wcf/img/updaterefrence.png" >
+	
+		
+		<md-card>
+			<md-card-content>
+				<pre class="ppPrettyPrint">
+ChatService.IChatService service = new ChatService.ChatServiceClient();
+Console.WriteLine("Loading messages...");
+String[] messages =  service.GetMessages();
+PrintMessages(messages);</pre>
+			</md-card-content>
+		</md-card>
+		
+		
+  </article>
+</section>
+
+
+<div class="md-actions navigate" layout="row" layout-align="center center">      
+	<md-button  ui-sref="wcfAzure" >
+		<ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+		<md-tooltip>Azure</md-tooltip>
+	</md-button>
+	<md-button  ui-sref="opdrachten3">
+		Assignments
+	</md-button>
+</div>

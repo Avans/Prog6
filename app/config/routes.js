@@ -38,6 +38,8 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         //Wcf
         addState('wcfIntroductie');
         addState('wcfWCF');
+        addState('wcfAzure');
+        addState('wcfConsume');
         //Mvc
         addState('mvcIntroductie');
 

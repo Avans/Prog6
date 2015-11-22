@@ -1,0 +1,110 @@
+<md-toolbar class="md-theme-indigo">
+	<h1 class="md-toolbar-tools">WCF</h1>
+</md-toolbar>
+
+<section class="md-padding max-sized">
+  <article class="md-padding">
+        <h2>Azure</h2>
+		
+		<p>
+			Het is mogelijk om onze service applicatie te starten via visual studio.
+			Een service moet daarentegen 24/7 beschikbaar zijn voor andere applicaties. 
+			Hierdoor is het slimmer om onze WCF service te laten draaien op een server. 
+		</p>
+		
+		<p>
+			Er zijn verschillende omgevingen waar je je applicatie kan hosten. 
+			Het is vereist dat op de omgeving waarin je wilt hosten IIS (Internet Information Services) geinstalleerd staat.
+			Dit is een verzameling van serverdiensten gemaakt door Microsoft.  
+		</p>
+		
+		<p>
+			Naast deze fysieke servers, is het ook mogelijk om je applicatie te hosten in de <b>cloud</b>.
+			Microsoft bied je een cloud omgeving aan genaamd Azure. Hier heb je niet alleen de mogelijkheid om applicaties te hosten, maar nog veel meer. 
+		</p>
+		
+		<p>
+			Wij gaan onze applicatie hosten in de <b>cloud</b>.
+		</p>
+		
+		<md-card>
+			<img src="onderwerp/wcf/img/azureplatform.png" >
+		</md-card>
+		
+		
+			
+		<p>
+			Als het goed heb je van je vakdocent een <b>Azure pass</b> ontvangen. Deze kun je activeren op de website 
+			<a target="_blank" href="https://www.microsoftazurepass.com/">Microsoft Azurepass</a>. Als je geen pas hebt ontvangen,
+			kan je deze aanvragen bij je vakdocent. Het is ook mogelijk om een volledig gratis account aan te vragen via 
+			<a target="_blank" href="https://www.dreamspark.com/Product/Product.aspx?productid=99">Dreamspark</a>
+		</p>
+		
+		<h3>Deploy</h3>
+		
+		<div layout="row" layout-sm="column">
+			<article>
+				<p>
+					
+					Er zijn verschillende manieren om een applicatie te deployen op een server. Wij gaan gebruik maken van de ingebouwde functionaliteit 
+					in visual studio. 
+				</p>
+				<p>
+					Het is namelijk mogelijk om een project te vanuit visual studio te publishen . 
+					We moeten hierna een aantal stappen door een wizard doorlopen. 
+				</p>
+				
+				<p>
+					In het onderstaande filmpje doorloop ik stap voor stap het deployment proces.
+				</p>
+
+			</article>
+			<div class="md-padding">
+				<img src="onderwerp/wcf/img/publish.png">
+			</div>
+		</div>
+		
+		<md-card>
+			<md-card-content>
+				Filmpje
+			</md-card-content>
+		</md-card>
+		
+		<h3>Webservice</h3>
+		
+		<p>
+			Na deze stappen staat de webservice online. 
+			Nu is het mogelijk voor andere applicaties om deze service te consumeren. 
+		</p>
+		<p>	
+			Daarnaast kun je statistieken over je webservice bekijken, en is je webservice schaalbaar.
+			Dit houd in dat het mogelijk is om de de capaciteit van je service te verhogen. 
+			Heb je vandaag 10 gebruikers, en morgen 1 miljoen? Dat is geen probleem. 
+			Zolang je het budget hebt om de se service te upgraden!
+		
+		<md-card>
+			<img src="onderwerp/wcf/img/avanschatservice.png" >
+		</md-card>
+		
+		
+			
+
+		
+		
+  </article>
+</section>
+
+
+
+
+		
+<div class="md-actions navigate" layout="row" layout-align="center center">      
+	<md-button  ui-sref="wcfWCF" >
+		<ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+		<md-tooltip>WCF</md-tooltip>
+	</md-button>
+	<md-button  ui-sref="wcfConsume" >
+		<ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+		<md-tooltip>Service consumeren</md-tooltip>
+	</md-button>
+</div>
