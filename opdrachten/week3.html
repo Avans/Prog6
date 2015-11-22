@@ -58,7 +58,7 @@
           <li>Open de Azure portal en maak een nieuwe SQL database</li>
           <li>Pas de connection string in het service project aan zodat deze verwijst naar de nieuwe database </li>
           <li>Publish de aangepaste service naar je eigen Azure omgeving</li>
-          <li>Pas de <b>Endpoint</b> in het console project aan zodat hij naar de juiste service verwijst</li>
+          <li>Pas de <b>Endpoint</b> in het console project aan zodat hij de juiste service consumeert</li>
         </ol> 
         
         
@@ -111,6 +111,12 @@
            </p>
            
            <p>
+               De gebruiker kan via een WPF applicatie een symbool naar de server sturen. 
+               Naast het symbool stuurt hij ook zijn naam, zodat de server weet wie het symbool gestuurd heeft.
+               De server genereert nu zelf een nieuw symbool, en controleerd wie er gewonnen heeft.
+               Als resultaat stuurt de server beiden symbolen en bijbehorende spelers (jij en computer).
+           
+           <p>
                Je applicatie bestaat uit de volgende onderdelen:
            </p>
            
@@ -130,6 +136,10 @@
                 </li>
             </ul>    
             
+            <p>
+                Schrijf unit tests om te controlleren of de business logica voor het vergelijken van symbolen goed werkt. 
+            </p>
+            
             
             <h4>Frontend applicate</h4>
             
@@ -140,10 +150,13 @@
             
             <p>Voeg een extra <b>OperationContract</b> toe aan je web service waarmee de gebruiker een multiplayer spel kan spelen.</p>
             
-            <p>Als een gebruiker een symbool vertuurd moet je kijken wat het vorige geposte symbool is. Is deze van dezelfde gebruiker? 
+            <p>
+                Als een gebruiker een symbool vertuurd moet je kijken wat het vorige geposte symbool is. Is deze van dezelfde gebruiker? 
                 Dan gebeurd er niks. Is deze van een andere gebruiker? Dan kun je controlleren of deze gewonnen heeft of niet.
+                We moeten dus elke keer een verstuurd symbool kunnen bewaren. 
             </p>
             
+
             <p>
                 <i><b>Tip</b>: Je hoeft hier niet perse een database te gebruiken om het laatst verstuurde symbool op te slaan! 
                 Kijk eens naar <b><a target="_blank" href="http://stackoverflow.com/questions/1826324/how-to-write-a-wcf-service-with-in-memory-persistent-storage">dit</a></b> artikel. </i>
