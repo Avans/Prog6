@@ -85,23 +85,18 @@
         </md-card-content>
      </md-card>
      
-     <md-card class="assignment normal">
-       
-        <section class="header">
-            
-            <h2 class="md-title">Rock-Paper-Scissors-Lizard-Spock</h2>
-            <span class="completed">
-                Huiswerk opdracht
-            </span>
-    
-            <span class="points">
-                30
-                <md-tooltip>Avans points</md-tooltip>
-            </span>  
-            
-          
-        </section>
-          <img src="opdrachten/img/rpsls.png">
+  <md-card pp-assignment="RPSLS" class="assignment normal">
+      <section class="header">
+        <h2 class="md-title">{{assignment.descr}}</h2>
+        <span class="completed">Completed by {{assignment.completedBy.length}} students</span>
+
+        <span class="points">
+            {{assignment.points}}
+            <md-tooltip>Avans points</md-tooltip>
+        </span>  
+
+      </section>
+      <img src="opdrachten/img/rpsls.png">
        <md-card-content>
            
            <p>
