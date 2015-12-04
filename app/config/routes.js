@@ -42,6 +42,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
         addState('wcfConsume');
         //Mvc
         addState('mvcIntroductie');
+        addState('mvcControllers');
 
      
       

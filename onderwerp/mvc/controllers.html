@@ -1,0 +1,136 @@
+<md-toolbar class="md-theme-indigo">
+	<h1 class="md-toolbar-tools">MVC</h1>
+</md-toolbar>
+
+<pp-editable-content>
+  <div id="iets">
+    
+  </div>
+</pp-editable-content>
+
+<section class="md-padding max-sized">
+  <article class="md-padding">
+        <h2>Controllers</h2>
+        
+        <p>
+          Controllers spelen een belangrijke rol binnen MVC. 
+          Ze zijn verantwoordelijk voor het ophalen van data uit een database en deze data wordt later weer gebruikt om de views te vullen. 
+          In de controller zit ook de meeste 'business logica'. Je kan de controller vergelijken met het View Model in MVVM. 
+        </p>
+        
+        <h3>Het grote stappenplan</h3>
+  </article>
+        
+  <md-card>
+      <pp-carousel>
+        <ul>  
+          <li>
+            <h3>Stap 1</h3>
+            <p>
+              Maak een Controller genaamd “HomeController”. 
+            </p>
+            <p>
+              Je kunt een controller ook een andere naam geven maar deze Controller 
+              moet altijd de term ‘Controller’ hebben en overerven van de base class Controller.
+              
+            
+              
+              <div layout="row">
+                <div flex="50">
+                  <pre class="ppPrettyPrint" >
+public class HomeController : Controller
+{
+    public ActionResult Index()
+    {
+        return View();
+    }
+}</pre>
+                </div>
+                <div flex="50">
+                  <img src="onderwerp/mvc/img/stap1.png">
+                </div>
+              </div>
+            </p>
+          </li>  
+          <li>
+            <h3>Stap 2</h3>
+            <p>
+              Voeg Actions toe aan de Controller. 
+            </p>
+            <p>
+              Deze Controller heeft standaard een Action genaamd Index. Je hebt de mogelijkheid meer Actions toe te voegen. 
+            </p>
+            
+            <pre class="ppPrettyPrint" >
+public ActionResult Index()
+{
+     return View();
+}
+
+public ActionResult About()
+{
+     return View();
+}</pre>
+
+
+            
+          </li>  
+          <li>
+            <h3>Stap 3</h3>
+            <p>
+             Maak een View voor elke Action in je Controller. 
+            </p>
+            <p>
+             Gebruik hiervoor de wizard van Visual Studio.
+            </p>
+          
+            <div layout="row">
+              <div flex="50">
+                <img src="onderwerp/mvc/img/stap1.png">
+              </div>
+            </div>
+          
+            <p>
+              <i><b>Tip</b>: Rechtermuisknop binnen de action toont het menu. </i>
+            </p>
+
+          </li>  
+          <li>
+            <h3>Stap 4</h3>
+            <p>Vul eventueel vanuit de Action de ViewBag met data die je wil tonen in de view. </p>
+            <pre class="ppPrettyPrint">ViewBag.Message = "Hello World";</pre>
+              
+          </li>
+          <li>
+            <h3>Stap 5</h3>
+            <p>Toon de waarde uit de ViewBag in de view met Razor.</p>
+            <pre class="ppPrettyPrint">
+&lt;h2&gt;Index&lt;/h2&gt;
+@ViewBag.Message
+</pre>  
+          </li>
+          <li>
+            <h3>Stap 6</h3>
+            <p>Maak eventueel een menu in de _layout file met daarin links naar alle controllers en alle Actions.</p>
+            <pre class="ppPrettyPrint">
+@Html.ActionLink("Home/Index", "Index", "Home")
+
+@* Met parameters *@
+@Html.ActionLink("Home/Index", "Show", "Home", new { naam = "Stijn"}, null)
+ 
+@RenderBody()
+</pre>
+              
+          </li>
+        </ul>  
+    </pp-carousel>
+  </md-card>
+        
+        <p>Voordelen:</p>
+        <ul>
+          <li>Separation Of Concerns</li>
+          <li>Testable logic (controller)</li>
+          <li><a target="_blank" href="https://nl.wikipedia.org/wiki/Wysiwyg">WYSIWYG</a> (view)</li>
+          <li>Sluit goed aan op HTML5/CSS3/jQuery</li>
+        </ul>
+  </article>
