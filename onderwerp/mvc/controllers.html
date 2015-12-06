@@ -2,37 +2,67 @@
 	<h1 class="md-toolbar-tools">MVC</h1>
 </md-toolbar>
 
-<pp-editable-content>
-  <div id="iets">
-    
-  </div>
-</pp-editable-content>
-
 <section class="md-padding max-sized">
   <article class="md-padding">
         <h2>Controllers</h2>
         
         <p>
           Controllers spelen een belangrijke rol binnen MVC. 
-          Ze zijn verantwoordelijk voor het ophalen van data uit een database en deze data wordt later weer gebruikt om de views te vullen. 
-          In de controller zit ook de meeste 'business logica'. Je kan de controller vergelijken met het View Model in MVVM. 
+          Ze zijn verantwoordelijk voor het ophalen van data uit een database en gebruiken deze data later weer om de views te vullen. 
+          In de controller zit ook veel 'business logica'. Je kan de controller vergelijken met het View Model in een WPF applicatie.
         </p>
         
-        <h3>Het grote stappenplan</h3>
-  </article>
+        <p>
+          Een controller geeft gebruikers toegang tot acties. Deze acties zijn methodes op de controller die HTML pagina's kunnen maken.
+          De gebruiker kan deze acties benaderen door een bepaalde URL op de website te benaderen. 
+          Neem als voorbeeld de onderstaande URL:
+        </p>
         
-  <md-card>
+        <pre class="ppPrettyPrint">http://leaguestore.azurewebsites.net/Home/News</pre>
+        
+        <p>In dit geval zal de <b>News</b> methode op de <b>Home</b> controller worden aangeroepen.</p>
+        
+        <md-card  >
+          <md-card-content>
+            <img  src="onderwerp/mvc/img/homeCtrl.png">
+          </md-card-content>
+        </md-card>
+        
+        
+        <section layout="row">
+          <section>
+            <p>
+              Elke actie op een controller heeft zijn eigen view. 
+              Als je een nieuwe actie defineerd zul je dus ook een nieuwe view moeten aanmaken. 
+              Deze views kun je terugvindenn in de folde <b>Views</b>. 
+            </p>
+            <p>
+              In deze folder vind je een sub folder voor  elke controller en daarin een html bestand met de naam van de actie. 
+            </p>
+          </section>
+          <section flex class="md-padding">
+           <img   src="onderwerp/mvc/img/viewLocatie.png">
+          </section>
+        </section>
+        
+        <h4>Stappenplan</h4>
+        
+  
+    <md-card>
+      <md-toolbar>
+          <h1 class="md-toolbar-tools">Stappenplan controller</h1>
+      </md-toolbar>
       <pp-carousel>
         <ul>  
           <li>
-            <h3>Stap 1</h3>
+            <h3>Stap 1/6</h3>
             <p>
               Maak een Controller genaamd “HomeController”. 
             </p>
             <p>
               Je kunt een controller ook een andere naam geven maar deze Controller 
               moet altijd de term ‘Controller’ hebben en overerven van de base class Controller.
-              
+            </p>
             
               
               <div layout="row">
@@ -53,7 +83,7 @@ public class HomeController : Controller
             </p>
           </li>  
           <li>
-            <h3>Stap 2</h3>
+            <h3>Stap 2/6</h3>
             <p>
               Voeg Actions toe aan de Controller. 
             </p>
@@ -76,7 +106,7 @@ public ActionResult About()
             
           </li>  
           <li>
-            <h3>Stap 3</h3>
+            <h3>Stap 3/6</h3>
             <p>
              Maak een View voor elke Action in je Controller. 
             </p>
@@ -96,13 +126,13 @@ public ActionResult About()
 
           </li>  
           <li>
-            <h3>Stap 4</h3>
+            <h3>Stap 4/6</h3>
             <p>Vul eventueel vanuit de Action de ViewBag met data die je wil tonen in de view. </p>
             <pre class="ppPrettyPrint">ViewBag.Message = "Hello World";</pre>
               
           </li>
           <li>
-            <h3>Stap 5</h3>
+            <h3>Stap 5/6</h3>
             <p>Toon de waarde uit de ViewBag in de view met Razor.</p>
             <pre class="ppPrettyPrint">
 &lt;h2&gt;Index&lt;/h2&gt;
@@ -110,7 +140,7 @@ public ActionResult About()
 </pre>  
           </li>
           <li>
-            <h3>Stap 6</h3>
+            <h3>Stap 6/6</h3>
             <p>Maak eventueel een menu in de _layout file met daarin links naar alle controllers en alle Actions.</p>
             <pre class="ppPrettyPrint">
 @Html.ActionLink("Home/Index", "Index", "Home")
@@ -125,12 +155,15 @@ public ActionResult About()
         </ul>  
     </pp-carousel>
   </md-card>
-        
-        <p>Voordelen:</p>
-        <ul>
-          <li>Separation Of Concerns</li>
-          <li>Testable logic (controller)</li>
-          <li><a target="_blank" href="https://nl.wikipedia.org/wiki/Wysiwyg">WYSIWYG</a> (view)</li>
-          <li>Sluit goed aan op HTML5/CSS3/jQuery</li>
-        </ul>
-  </article>
+</article>
+  <div class="md-actions navigate" layout="row" layout-align="center center">      
+    <md-button ui-sref="mvcIntroductie">
+        <ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+          <md-tooltip>Introductie</md-tooltip>
+    </md-button>
+    <md-button  ui-sref="mvcView" >
+        <ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+        <md-tooltip>View</md-tooltip>
+    </md-button>
+  </div>
+</section>
