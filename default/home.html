@@ -16,15 +16,14 @@
 			
 			
           	<section id="canvas">
-				<img id="loader" src="default/img/loading.gif" style="bottom: 0px">
-				<img id="firstToLoad" src="default/img/Background.png"  ng-srcset="{{getSrcset('Background')}}" style="bottom: -{{0.4 * level}}">
-				<img src="default/img/wolk1.png" ng-srcset="{{getSrcset('wolk1')}}" class="cloud" style="bottom: -{{0.5 * level}}">
+				<section id="loader" ></section>
+				<img id="firstToLoad" src="default/img/Background.png"  ng-srcset="{{getSrcset('Background')}}" sb-load style="bottom: -{{0.4 * level}}">
+				<img src="default/img/wolk1.png" ng-srcset="{{getSrcset('wolk1')}}"  sb-load class="cloud" style="bottom: -{{0.5 * level}}">
 				<img src="default/img/MVC.png"  ng-srcset="{{getSrcset('MVC')}}" style="bottom: -{{ level }}">
 				<img src="default/img/WCF-AAN.png"   ng-srcset="{{getSrcset('WCF-AAN')}}" style="bottom: -{{1.2 * level }}">
 				<img src="default/img/EF-AAN.png"   ng-srcset="{{getSrcset('EF-AAN')}}" style="bottom: -{{1.4 * level }}">
 				<img src="default/img/WPF-AAN.png"  ng-srcset="{{getSrcset('WPF-AAN')}}" style="bottom: -{{1.6 * level }}">
 				<img src="default/img/wolk2.png"  ng-srcset="{{getSrcset('wolk2')}}"class="cloud reverse" style="bottom: -{{level}}">
-				
 				<section class="banner" id="wpf"  ng-show="isNear(0)" layout="row" hide-sm>
 					
 					<section flex>

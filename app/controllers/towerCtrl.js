@@ -8,7 +8,10 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 	$scope.ready = false;
 	$scope.realHeight = (canvasWidth * ratio - canvasHeight);
 
-
+	$scope.loadingComplete = function(){
+		$('#loader').height(0);
+	}
+	
 	$('#firstToLoad').on('load', function(){
 		$scope.ready = true;
 		$scope.toLevel(100);
@@ -31,6 +34,4 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 		var root = "default/img/";
 		return root + img + "_small.png 600w, " + root + img + "_medium.png 900w, " + root + img + "_large.png 1200w";
 	}
-	
-	
 };

@@ -27,10 +27,12 @@ app.constant('appConfig', {
 var routesConfig = require('./config/routes');
 var appCtrl = require("./controllers/appCtrl");
 var towerCtrl = require('./controllers/towerCtrl');
+var sbLoad = require('./directives/sbLoad');
 
 //Add the controller and config to the module
 app.controller('appCtrl', appCtrl);
 app.controller('towerCtrl', towerCtrl);
+app.directive('sbLoad', sbLoad);
 app.config(routesConfig);
 
 app.config(function($mdThemingProvider) {
