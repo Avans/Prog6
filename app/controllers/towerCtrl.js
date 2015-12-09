@@ -11,7 +11,7 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 
 	$('#firstToLoad').on('load', function(){
 		$scope.ready = true;
-		$scope.toLevel(70);
+		$scope.toLevel(100);
 	});
 
 	$scope.toLevel = function(newLevel){

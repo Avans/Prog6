@@ -20,7 +20,7 @@
 				<img id="firstToLoad" src="default/img/Background.png"  ng-srcset="{{getSrcset('Background')}}" style="bottom: -{{0.4 * level}}">
 				<img src="default/img/wolk1.png" ng-srcset="{{getSrcset('wolk1')}}" class="cloud" style="bottom: -{{0.5 * level}}">
 				<img src="default/img/MVC.png"  ng-srcset="{{getSrcset('MVC')}}" style="bottom: -{{ level }}">
-				<img src="default/img/WCF.png"   ng-srcset="{{getSrcset('WCF')}}" style="bottom: -{{1.2 * level }}">
+				<img src="default/img/WCF-AAN.png"   ng-srcset="{{getSrcset('WCF-AAN')}}" style="bottom: -{{1.2 * level }}">
 				<img src="default/img/EF-AAN.png"   ng-srcset="{{getSrcset('EF-AAN')}}" style="bottom: -{{1.4 * level }}">
 				<img src="default/img/WPF-AAN.png"  ng-srcset="{{getSrcset('WPF-AAN')}}" style="bottom: -{{1.6 * level }}">
 				<img src="default/img/wolk2.png"  ng-srcset="{{getSrcset('wolk2')}}"class="cloud reverse" style="bottom: -{{level}}">
@@ -50,8 +50,7 @@
 				
 				<section class="banner" id="ef"  ng-show="isNear(30)" layout="row"  hide-sm>
 					
-					<section >
-					
+					<section>
 						<p>Entity Framework</p>
 					
 						<ul>
@@ -71,14 +70,24 @@
 					
 				</section>
 				
-				<section class="banner" id="wcf" ng-show="isNear(70)" hide-sm>
-					<p>Windows Communication Foundation</p>
+				<section class="banner" id="wcf" ng-show="isNear(70)" layout="row"  hide-sm>
 					
-					<ul>
-						<li>ASP.NET</li>
-						<li>Service</li>
-						<li>Azure</li>
-					</ul>
+					<section>
+						
+						<p>Windows Communication Foundation</p>
+						
+						<ul>
+							<li>ASP.NET</li>
+							<li>Service</li>
+							<li>Azure</li>
+						</ul>
+					</section>
+					
+					<ng-md-icon icon="check_circle" style="fill: green";  size="36">
+						<md-tooltip>
+							This subject is completed
+						</md-tooltip>
+					</ng-md-icon> 
 					
 				</section>
 				
@@ -94,11 +103,7 @@
 						</ul>
 					</section>
 					
-					<ng-md-icon icon="lock"  size="36">
-						<md-tooltip>
-							This subject is locked
-						</md-tooltip>
-					</ng-md-icon> 
+		
 					
 				
 				</section>
