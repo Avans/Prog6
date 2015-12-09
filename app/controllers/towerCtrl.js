@@ -10,12 +10,10 @@ module.exports = function ($scope, $timeout, $mdSidenav, $log, $rootScope) {
 
 	$scope.loadingComplete = function(){
 		$('#loader').height(0);
-	}
-	
-	$('#firstToLoad').on('load', function(){
 		$scope.ready = true;
 		$scope.toLevel(100);
-	});
+	}
+	
 
 	$scope.toLevel = function(newLevel){
 		$scope.level = $scope.realHeight / 100 * newLevel;
