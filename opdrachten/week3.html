@@ -3,164 +3,163 @@
 </md-toolbar>
 
 <section class="md-padding max-sized">
-   
-     <article class="md-padding">
-        <h2>Introductie</h2>
-        
-        <p>
-            Elke week zijn er nieuwe opdrachten uit een bepaalde categorie. 
-            Voor deze week staan er 3 opdrachten klaar:
-        </p>
-        
-        <ul>
-            <li>Een Workshop opdracht (WS) </br></li>
-            <li>Een <b>Huiswerk</b> opdracht (Avans punten)</br>
-            </li>
-        </ul>
-    </article>
-    
-     <md-card class="assignment workshop relative">
-        <section class="header">
-        <h2 class="md-title">Avans Chat</h2>
-        <span class="completed">
+
+	<article class="md-padding">
+		<h2>Introductie</h2>
+
+		<p>
+			Elke week zijn er nieuwe opdrachten uit een bepaalde categorie. Voor deze week staan er 3 opdrachten klaar:
+		</p>
+
+		<ul>
+			<li>Een Workshop opdracht (WS) </br>
+			</li>
+			<li>Een <b>Huiswerk</b> opdracht (Avans punten)</br>
+			</li>
+		</ul>
+	</article>
+
+	<md-card class="assignment workshop relative">
+		<section class="header">
+			<h2 class="md-title">Avans Chat</h2>
+			<span class="completed">
             Workshop assignment
         </span>
 
-        <span class="points">
+			<span class="points">
                 ws
         <md-tooltip>Workshop Assignment</md-tooltip>
-        </span>  
+        </span>
 
-        </section>
-        <md-card-content>
+		</section>
+		<md-card-content>
 
-        <p>
-            Open de Visual Studio Solution <a target="_blank" href="https://github.com/Avans/Prog6_AvansChat">AvansChat</a>. Deze solution bestaat uit de volgende projects:
-        </p>
-        
-        <ul>
-            <li>ChatConsole (Console applicatie)</li>
-            <li>ChatService (WCF service)</li>
-        </ul>
-   
-        <p>
-          Start de console applicatie en kijk wat er gebeurt.
-        </p>
-        
-        <h3>De opdracht</h3>
-        
-        <p>
-          Het bijgevoegde WCF project is op dit moment gehost in een aparte <b>Azure</b> omgeving.
-          Het is aan jou de taak deze applicatie uit te breiden en te hosten op je eigen service.
-        </p>
-        
-        <ol>
-          <li>Open de Azure portal en maak een nieuwe SQL database</li>
-          <li>Pas de connection string in het service project aan zodat deze verwijst naar de nieuwe database </li>
-          <li>Publish de aangepaste service naar je eigen Azure omgeving</li>
-          <li>Pas de <b>Endpoint</b> in het console project aan zodat hij de juiste service consumeert</li>
-        </ol> 
-        
-        
-        <p>
-          Is dit helemaal gelukt? Dan gaan we nu onze applicatie uitbreiden. 
-          Op dit moment ontvangen we een lijst van String als return value van de service.
-          Zorg ervoor dat dit een lijst wordt van de een klasse <b>Message</b> met dezelfde properties als de klasse <b>ChatMsg</b>. 
-        </p>
-        
-        <p>
-            Test je webservice met de WCF test client. Werkt alles naar behoren? Publish dan de webserivce opnieuw en pas 
-            de console applicatie aan. Update de service refrence van de console applicatie. 
-        </p>
-        
-        <p>
-          <i><b>Tip: </b>maak gebruik van DataContract</i>
-        </p>  
-        
-         <section class="output">
-            <label>Github</label>
-            <span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_AvansChat">Start project</a></span>
-        </section>
-        
-        </md-card-content>
-     </md-card>
-     
-  <md-card pp-assignment="RPSLS" class="assignment normal">
-      <section class="header">
-        <h2 class="md-title">{{assignment.descr}}</h2>
-        <span class="completed">Completed by {{assignment.completedBy.length}} students</span>
+			<p>
+				Open de Visual Studio Solution <a target="_blank" href="https://github.com/Avans/Prog6_AvansChat">AvansChat</a>. Deze
+				solution bestaat uit de volgende projects:
+			</p>
 
-        <span class="points">
+			<ul>
+				<li>ChatConsole (Console applicatie)</li>
+				<li>ChatService (WCF service)</li>
+			</ul>
+
+			<p>
+				Start de console applicatie en kijk wat er gebeurt.
+			</p>
+
+			<h3>De opdracht</h3>
+
+			<p>
+				Het bijgevoegde WCF project is op dit moment gehost in een aparte <b>Azure</b> omgeving. Het is aan jou de taak deze
+				applicatie uit te breiden en te hosten op je eigen service.
+			</p>
+
+			<ol>
+				<li>Open de Azure portal en maak een nieuwe SQL database</li>
+				<li>Pas de connection string in het service project aan zodat deze verwijst naar de nieuwe database </li>
+				<li>Publish de aangepaste service naar je eigen Azure omgeving</li>
+				<li>Pas de <b>Endpoint</b> in het console project aan zodat hij de juiste service consumeert</li>
+			</ol>
+
+
+			<p>
+				Is dit helemaal gelukt? Dan gaan we nu onze applicatie uitbreiden. Op dit moment ontvangen we een lijst van String als return
+				value van de service. Zorg ervoor dat dit een lijst wordt van de een klasse <b>Message</b> met dezelfde properties
+				als de klasse <b>ChatMsg</b>.
+			</p>
+
+			<p>
+				Test je webservice met de WCF test client. Werkt alles naar behoren? Publish dan de webserivce opnieuw en pas de console
+				applicatie aan. Update de service refrence van de console applicatie.
+			</p>
+
+			<p>
+				<i><b>Tip: </b>maak gebruik van DataContract</i>
+			</p>
+
+			<section class="output">
+				<label>Github</label>
+				<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_AvansChat">Start project</a></span>
+			</section>
+
+		</md-card-content>
+	</md-card>
+
+	<md-card pp-assignment="'RPSLS'" class="assignment normal">
+		<section class="header">
+			<h2 class="md-title">{{assignment.descr}}</h2>
+			<span class="completed">Completed by {{assignment.completedBy.length}} students</span>
+
+			<span class="points">
             {{assignment.points}}
             <md-tooltip>Avans points</md-tooltip>
-        </span>  
+        </span>
 
-      </section>
-      <img src="opdrachten/img/rpsls.png">
-       <md-card-content>
-           
-           <p>
-               Bouw een Rock-Paper-Scissors-Lizard-Spock (RPSLS) game service.
-               Dit is een spel variant op rock paper scissors.
-               Voor deze opdracht heb je <b>geen</b> database nodig.
-           </p>
-           
-           <p>
-               De gebruiker kan via een WPF applicatie een symbool naar de server sturen. 
-               Naast het symbool stuurt hij ook zijn naam, zodat de server weet wie het symbool gestuurd heeft.
-               De server genereert nu zelf een nieuw symbool, en controleert wie er gewonnen heeft.
-               Als resultaat stuurt de server beide symbolen en bijbehorende spelers (jij en computer).
-           
-           <p>
-               Je applicatie bestaat uit de volgende onderdelen:
-           </p>
-           
-           <h4>WCF service</h4>
-           
-           <p>Een WCF service waar de gebruiker een potje RPSLS kan spelen tegen de computer.</p>
-                   
-            <ul>
-                <li>Deze service heeft een bijbehorende <b>Enum</b> Symbool.</li>
-                <li>Deze service heeft een bijbehorend datacontract als resultaat met daarin minstens:
-                    <ul>
-                        <li>Symbool van de gebruiker</li>
-                        <li>Symbool van de computer</li>
-                        <li>Tijdstip van het spel</li>
-                        <li>De winnaar</li>
-                    </ul>
-                </li>
-            </ul>    
-            
-            <p>
-                Schrijf unit tests om te controleren of de business logica voor het vergelijken van symbolen goed werkt. 
-            </p>
-            
-            
-            <h4>Frontend applicate</h4>
-            
-            <p>Een WPF applicatie met de bijbehorende knoppen en een manier om een gebruikersnaam te kiezen.</p>
-            <p>Deze applicatie <b>consumeert</b> de eerder gemaakte webservice. </p>
-            
-            <h4>Extra: Multiplayer</h4>
-            
-            <p>Voeg een extra <b>OperationContract</b> toe aan je web service waarmee de gebruiker een multiplayer spel kan spelen.</p>
-            
-            <p>
-                Als een gebruiker een symbool verstuurt moet je kijken wat het vorige geposte symbool is. Is deze van dezelfde gebruiker? 
-                Dan gebeurt er niks. Is deze van een andere gebruiker? Dan kun je controleren of deze gewonnen heeft of niet.
-                We moeten dus elke keer een verstuurd symbool kunnen bewaren. 
-            </p>
-            
+		</section>
+		<img src="opdrachten/img/rpsls.png">
+		<md-card-content>
 
-            <p>
-                <i><b>Tip</b>: Je hoeft hier niet perse een database te gebruiken om het laatst verstuurde symbool op te slaan! 
+			<p>
+				Bouw een Rock-Paper-Scissors-Lizard-Spock (RPSLS) game service. Dit is een spel variant op rock paper scissors. Voor deze
+				opdracht heb je <b>geen</b> database nodig.
+			</p>
+
+			<p>
+				De gebruiker kan via een WPF applicatie een symbool naar de server sturen. Naast het symbool stuurt hij ook zijn naam, zodat
+				de server weet wie het symbool gestuurd heeft. De server genereert nu zelf een nieuw symbool, en controleert wie er gewonnen
+				heeft. Als resultaat stuurt de server beide symbolen en bijbehorende spelers (jij en computer).
+
+				<p>
+					Je applicatie bestaat uit de volgende onderdelen:
+				</p>
+
+				<h4>WCF service</h4>
+
+				<p>Een WCF service waar de gebruiker een potje RPSLS kan spelen tegen de computer.</p>
+
+				<ul>
+					<li>Deze service heeft een bijbehorende <b>Enum</b> Symbool.</li>
+					<li>Deze service heeft een bijbehorend datacontract als resultaat met daarin minstens:
+						<ul>
+							<li>Symbool van de gebruiker</li>
+							<li>Symbool van de computer</li>
+							<li>Tijdstip van het spel</li>
+							<li>De winnaar</li>
+						</ul>
+					</li>
+				</ul>
+
+				<p>
+					Schrijf unit tests om te controleren of de business logica voor het vergelijken van symbolen goed werkt.
+				</p>
+
+
+				<h4>Frontend applicate</h4>
+
+				<p>Een WPF applicatie met de bijbehorende knoppen en een manier om een gebruikersnaam te kiezen.</p>
+				<p>Deze applicatie <b>consumeert</b> de eerder gemaakte webservice. </p>
+
+				<h4>Extra: Multiplayer</h4>
+
+				<p>Voeg een extra <b>OperationContract</b> toe aan je web service waarmee de gebruiker een multiplayer spel kan spelen.</p>
+
+				<p>
+					Als een gebruiker een symbool verstuurt moet je kijken wat het vorige geposte symbool is. Is deze van dezelfde gebruiker?
+					Dan gebeurt er niks. Is deze van een andere gebruiker? Dan kun je controleren of deze gewonnen heeft of niet. We moeten
+					dus elke keer een verstuurd symbool kunnen bewaren.
+				</p>
+
+
+				<p>
+					<i><b>Tip</b>: Je hoeft hier niet perse een database te gebruiken om het laatst verstuurde symbool op te slaan! 
                 Kijk eens naar <b><a target="_blank" href="http://stackoverflow.com/questions/1826324/how-to-write-a-wcf-service-with-in-memory-persistent-storage">dit</a></b> artikel. </i>
-            </p>
+				</p>
 
-           
-       </md-card-content>
-     </md-card>
-           
-   
-   
+
+		</md-card-content>
+	</md-card>
+
+
+
 </section>

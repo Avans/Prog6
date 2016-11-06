@@ -3,110 +3,107 @@
 </md-toolbar>
 
 <section class="md-padding max-sized">
-   
-      <article class="md-padding">
-        <h2>Introductie</h2>
-        
-        <p>
-           Deze week geen workshop opdracht, maar alleen een huiswerk opdracht.
-           We gaan de onderwerpen van de afgelopen weken herhalen in 1 grote opdracht.
-           We gaan een <b>League of Legends Manager</b> applicatie bouwen. 
-        </p>
-        
-        <p>
-            Deze opdracht wordt gemaakt in DUO's! 
-            We gaan dus alvast oefenen voor het assessment.
-        </p>
-        
-        <ul>
 
-        </ul>
-    </article>
-       
-     <md-card pp-assignment="leagueManager" class="assignment hard">
-      <section class="header">
-        <h2 class="md-title">{{assignment.descr}}</h2>
-        <span class="completed">Completed by {{assignment.completedBy.length}} students</span>
+	<article class="md-padding">
+		<h2>Introductie</h2>
 
-        <span class="points">
+		<p>
+			Deze week geen workshop opdracht, maar alleen een huiswerk opdracht. We gaan de onderwerpen van de afgelopen weken herhalen
+			in 1 grote opdracht. We gaan een <b>League of Legends Manager</b> applicatie bouwen.
+		</p>
+
+		<p>
+			Deze opdracht wordt gemaakt in DUO's! We gaan dus alvast oefenen voor het assessment.
+		</p>
+
+		<ul>
+
+		</ul>
+	</article>
+
+	<md-card pp-assignment="'leagueManager'" class="assignment hard">
+		<section class="header">
+			<h2 class="md-title">{{assignment.descr}}</h2>
+			<span class="completed">Completed by {{assignment.completedBy.length}} students</span>
+
+			<span class="points">
             {{assignment.points}}
             <md-tooltip>Avans points</md-tooltip>
-        </span>  
-      </section>
-       <md-card-content>
-           
-            <p>
-               We gaan een League manager bouwen.
-               Dit is een spel waarbij je je eigen League of legends team kan samenstellen en kan spelen tegen andere spelers. 
-            </p>
-            
-            <p>
-                Om te beginnen moet je het  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueManager">Start project</a></span> forken.
-                In deze versie kun je met 2 man aan deze opdracht werken. 
-            </p>
-            
-            <p>
-                In de solution <b>LeagueMananger</b>  zitten de volgende projecten
-            </p>
-            
-            <ul>
-                <li>LeagueManager.Domain</li>
-                <li>LeagueManager.Service</li>
-                <li>LeagueManager.Test</li>
-                <li>LeagueManager.WPF</li>
-            </ul>
-            
-            
-            <md-card>
-                <img src="opdrachten/img/league.png">
-            </md-card>
-            
-            <h2>De flow van het spel</h2>
-            
-            <ol>
-                <li>Stel een team samen van champions</li>
-                <li>Stuur deze samenstelling naar de server</li>
-                <li>Kijk elke seconde of er een andere speler een samenstelling heeft verstuurd</li>
-                <li>De server kijkt welke samenstelling gewonnen heeft en stopt deze in een game resultaat</li>
-                <li>Haal de resultaten op van de server</li>
-            </ol>
-            
-            <h2>De opdracht</h2>
-            
-            <p>
-                Bouw de service verder af en sluit deze aan op de client-applicatie. 
-                Deze service moet een <b>OperationContract</b> hebben waarmee je je gekozen opstelling naar de server kan versturen. 
-                Daarnaast moet de server een <b>OperationContract</b> hebben waarmee je het resultaat van de 'match' kan ophalen. 
-                Indien de 'match' resultaten direct na het versturen van je opstelling beschikbaar zijn, moet deze methode de resultaten meteen teruggeven. 
-             </p>
-             
-             <p>
-                 De service moet ook een <b>OperationContract</b> hebben die een lijst van alle te spelen champions teruggeeft.
-             </p>
-            
-            <p>
-                In het domeinmodel zit een interface <b>IChampion</b>. Gebruik deze interface om voor minstens 5 champions een klasse te defini&euml;ren. 
-                Gebruik hierna Ninject om een volledige lijst met champions op te halen. 
-            </p>
-            
-            
-            <h2>Technische eisen</h2>
-            <ul>
-                <li>Maak gebruik van Ninject of een ander Dependency Injection framework</li>
-                <li>Zorg voor minstens 60% code coverage</li>
-                <li>Host de service in WCF</li>
-                <li>Sla de informatie op in een database (ef)</li>
-            </ul>
-            
+        </span>
+		</section>
+		<md-card-content>
+
+			<p>
+				We gaan een League manager bouwen. Dit is een spel waarbij je je eigen League of legends team kan samenstellen en kan spelen
+				tegen andere spelers.
+			</p>
+
+			<p>
+				Om te beginnen moet je het <a target="_blank" href="https://github.com/Avans/Prog6_LeagueManager">Start project</a></span>
+				forken. In deze versie kun je met 2 man aan deze opdracht werken.
+			</p>
+
+			<p>
+				In de solution <b>LeagueMananger</b> zitten de volgende projecten
+			</p>
+
+			<ul>
+				<li>LeagueManager.Domain</li>
+				<li>LeagueManager.Service</li>
+				<li>LeagueManager.Test</li>
+				<li>LeagueManager.WPF</li>
+			</ul>
 
 
-            <section class="output">
-                <label>Github</label>
-                <span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueManager">Start project</a></span>
-            </section>
-         
+			<md-card>
+				<img src="opdrachten/img/league.png">
+			</md-card>
 
-           
-       </md-card-content>
-     </md-card>
+			<h2>De flow van het spel</h2>
+
+			<ol>
+				<li>Stel een team samen van champions</li>
+				<li>Stuur deze samenstelling naar de server</li>
+				<li>Kijk elke seconde of er een andere speler een samenstelling heeft verstuurd</li>
+				<li>De server kijkt welke samenstelling gewonnen heeft en stopt deze in een game resultaat</li>
+				<li>Haal de resultaten op van de server</li>
+			</ol>
+
+			<h2>De opdracht</h2>
+
+			<p>
+				Bouw de service verder af en sluit deze aan op de client-applicatie. Deze service moet een <b>OperationContract</b> hebben
+				waarmee je je gekozen opstelling naar de server kan versturen. Daarnaast moet de server een <b>OperationContract</b>				hebben waarmee je het resultaat van de 'match' kan ophalen. Indien de 'match' resultaten direct na het versturen van
+				je opstelling beschikbaar zijn, moet deze methode de resultaten meteen teruggeven.
+			</p>
+
+			<p>
+				De service moet ook een <b>OperationContract</b> hebben die een lijst van alle te spelen champions teruggeeft.
+			</p>
+
+			<p>
+				In het domeinmodel zit een interface <b>IChampion</b>. Gebruik deze interface om voor minstens 5 champions een klasse
+				te defini&euml;ren. Gebruik hierna Ninject om een volledige lijst met champions op te halen.
+			</p>
+
+
+			<h2>Technische eisen</h2>
+			<ul>
+				<li>Maak gebruik van Ninject of een ander Dependency Injection framework</li>
+				<li>Zorg voor minstens 60% code coverage</li>
+				<li>Host de service in WCF</li>
+				<li>Sla de informatie op in een database (ef)</li>
+			</ul>
+
+
+
+			<section class="output">
+				<label>Github</label>
+				<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueManager">Start project</a></span>
+			</section>
+
+
+
+		</md-card-content>
+	</md-card>
 </section>
