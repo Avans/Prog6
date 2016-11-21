@@ -35,8 +35,7 @@
 		<md-card-content>
 
 			<p>
-				Open de Visual Studio Solution <a target="_blank" href="https://github.com/Avans/Prog6_AvansChat">AvansChat</a>. Deze
-				solution bestaat uit de volgende projects:
+				Deze week geen start project! We gaan alles lekker zelf bouwen. Maak een nieuwe soslution en voeg hier 2 projecten aan toe.
 			</p>
 
 			<ul>
@@ -44,24 +43,30 @@
 				<li>ChatService (WCF service)</li>
 			</ul>
 
-			<p>
-				Start de console applicatie en kijk wat er gebeurt.
+			<h3>Stap 1. - Defineren</h3>
+
+			<p>Maak een <b>service interface</b> met daarop 2 methodes:
+				<ul>
+					<li>SendMessage(string message)</li>
+					<li>GetMessages(string messages)</li>
+				</ul>
 			</p>
 
-			<h3>De opdracht</h3>
+			<h3>Stap 2. Implementeren</h3>
 
-			<p>
-				Het bijgevoegde WCF project is op dit moment gehost in een aparte <b>Azure</b> omgeving. Het is aan jou de taak deze
-				applicatie uit te breiden en te hosten op je eigen service.
+			<p>Maak een service die dit interface implementeerd. Verzin zelf een leuke invulling voor de logica!</p>
+
+			<p>Stap 4. - Publishen</p>
+
+			<p>Publish je applicatie op Azure!</p>
+
+			<h3>Stap 5. - Consumeren.</h3>
+
+			<p>Bouw een console applicatie die berichtjes kan versturen, en elke 2 seoncde alle berichten van de service opvraagt. Vergeet
+				niet de Service refrence toe te voegen!
 			</p>
 
-			<ol>
-				<li>Open de Azure portal en maak een nieuwe SQL database</li>
-				<li>Pas de connection string in het service project aan zodat deze verwijst naar de nieuwe database </li>
-				<li>Publish de aangepaste service naar je eigen Azure omgeving</li>
-				<li>Pas de <b>Endpoint</b> in het console project aan zodat hij de juiste service consumeert</li>
-			</ol>
-
+			<h4>Stap 5. Extra</h4>
 
 			<p>
 				Is dit helemaal gelukt? Dan gaan we nu onze applicatie uitbreiden. Op dit moment ontvangen we een lijst van String als return
