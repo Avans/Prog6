@@ -45,11 +45,15 @@
 
 			<h3>Stap 1. - Definiëren</h3>
 
-			<p>Maak een <b>service interface</b> met daarop 2 methodes:
+			<p>Defineer een <b>service interface</b> in het WCF service project met daarop 2 methodes:
 				<ul>
-					<li>SendMessage(string message)</li>
-					<li>GetMessages(string messages)</li>
+					<li>void SendMessage(string message)</li>
+					<li>string[] GetMessages()</li>
 				</ul>
+			</p>
+
+			<p>
+				<p><b>Tip: </b> Standaard krijg je een interface IService. Deze kan je aanpassen!</p>
 			</p>
 
 			<h3>Stap 2. Implementeren</h3>
