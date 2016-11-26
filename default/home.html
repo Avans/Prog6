@@ -1,138 +1,169 @@
-<md-toolbar class="md-theme-indigo withSkyline" >
+<md-toolbar class="md-theme-indigo withSkyline">
 	<h1 class="md-toolbar-tools">Home</h1>
 </md-toolbar>
 
-  <section class="md-padding max-sized" ng-controller="towerCtrl">
-      <md-card>
+<section class="max-sized">
 
-			
-			<section layout="row" layout-align="space-around center" hide-sm> 
+	<article class="md-padding" layout="row">
+
+		<section flex class="md-padding">
+			<h2>Github community beschikbaar!</h2>
+
+			<p>
+				Vanaf nu staan alle demos en uitwerkingen netjes gecentreerd op 1 github community.
+			</p>
+
+			<p>Bekijk de repositories en stel vragen in de vorm van issues!
+		</section>
+
+		<section flex class="md-padding">
+			<div class="github-card" data-user="Avans-Prog6"></div>
+		</section>
+
+	</article>
+
+
+
+	<!-- Github cards -->
+	<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+
+
+	<section class="md-padding" ng-controller="towerCtrl">
+		<md-card>
+
+
+			<section layout="row" layout-align="space-around center" hide-sm>
 				<md-button class="md-primary" ng-click="toLevel(0)">WPF</md-button>
 				<md-button class="md-primary" ng-click="toLevel(30)">EF</md-button>
 				<md-button class="md-primary" ng-click="toLevel(70)">WCF</md-button>
 				<md-button class="md-primary" ng-click="toLevel(100)">MVC</md-button>
 			</section>
-		
-			
-			
-          	<section id="canvas">
-				<section id="loader" ></section>
-				<img src="default/img/Background.png"  ng-srcset="{{getSrcset('Background')}}" sb-load style="bottom: -{{0.4 * level}}">
-				<img src="default/img/wolk1.png" ng-srcset="{{getSrcset('wolk1')}}"  sb-load class="cloud" style="bottom: -{{0.5 * level}}">
-				<img src="default/img/MVC.png"  ng-srcset="{{getSrcset('MVC')}}" style="bottom: -{{ level }}">
-				<img src="default/img/WCF-AAN.png"   ng-srcset="{{getSrcset('WCF-AAN')}}" style="bottom: -{{1.2 * level }}">
-				<img src="default/img/EF-AAN.png"   ng-srcset="{{getSrcset('EF-AAN')}}" style="bottom: -{{1.4 * level }}">
-				<img src="default/img/WPF-AAN.png"  ng-srcset="{{getSrcset('WPF-AAN')}}" style="bottom: -{{1.6 * level }}">
-				<img src="default/img/wolk2.png"  ng-srcset="{{getSrcset('wolk2')}}"class="cloud reverse" style="bottom: -{{level}}">
-				<section class="banner" id="wpf"  ng-show="isNear(0)" layout="row" hide-sm>
-					
+
+
+
+			<section id="canvas">
+				<section id="loader"></section>
+				<img src="default/img/Background.png" ng-srcset="{{getSrcset('Background')}}" sb-load style="bottom: -{{0.4 * level}}">
+				<img src="default/img/wolk1.png" ng-srcset="{{getSrcset('wolk1')}}" sb-load class="cloud" style="bottom: -{{0.5 * level}}">
+				<img src="default/img/MVC.png" ng-srcset="{{getSrcset('MVC')}}" style="bottom: -{{ level }}">
+				<img src="default/img/WCF-AAN.png" ng-srcset="{{getSrcset('WCF-AAN')}}" style="bottom: -{{1.2 * level }}">
+				<img src="default/img/EF-AAN.png" ng-srcset="{{getSrcset('EF-AAN')}}" style="bottom: -{{1.4 * level }}">
+				<img src="default/img/WPF-AAN.png" ng-srcset="{{getSrcset('WPF-AAN')}}" style="bottom: -{{1.6 * level }}">
+				<img src="default/img/wolk2.png" ng-srcset="{{getSrcset('wolk2')}}" class="cloud reverse" style="bottom: -{{level}}">
+				<section class="banner" id="wpf" ng-show="isNear(0)" layout="row" hide-sm>
+
 					<section flex>
-					
+
 						<p>WPF</p>
-						
+
 						<ul>
 							<li>XAML</li>
 							<li>Binding</li>
 							<li>MVVM</li>
 						</ul>
 					</section>
-					
-					
-					<ng-md-icon icon="check_circle" style="fill: green";  size="36">
+
+
+					<ng-md-icon icon="check_circle" style="fill: green" ; size="36">
 						<md-tooltip>
 							This subject is completed
 						</md-tooltip>
-					</ng-md-icon> 
-					
+					</ng-md-icon>
+
 
 				</section>
-				
-				<section class="banner" id="ef"  ng-show="isNear(30)" layout="row"  hide-sm>
-					
+
+				<section class="banner" id="ef" ng-show="isNear(30)" layout="row" hide-sm>
+
 					<section>
 						<p>Entity Framework</p>
-					
+
 						<ul>
 							<li>Database</li>
 							<li>ORM</li>
 							<li>Code First</li>
 						</ul>
 					</section>
-					
-					
-					<ng-md-icon icon="check_circle" style="fill: green";  size="36">
+
+
+					<ng-md-icon icon="check_circle" style="fill: green" ; size="36">
 						<md-tooltip>
 							This subject is completed
 						</md-tooltip>
-					</ng-md-icon> 
-					
-					
+					</ng-md-icon>
+
+
 				</section>
-				
-				<section class="banner" id="wcf" ng-show="isNear(70)" layout="row"  hide-sm>
-					
+
+				<section class="banner" id="wcf" ng-show="isNear(70)" layout="row" hide-sm>
+
 					<section>
-						
+
 						<p>Windows Communication Foundation</p>
-						
+
 						<ul>
 							<li>ASP.NET</li>
 							<li>Service</li>
 							<li>Azure</li>
 						</ul>
 					</section>
-					
-					<ng-md-icon icon="check_circle" style="fill: green";  size="36">
+
+					<ng-md-icon icon="check_circle" style="fill: green" ; size="36">
 						<md-tooltip>
 							This subject is completed
 						</md-tooltip>
-					</ng-md-icon> 
-					
+					</ng-md-icon>
+
 				</section>
-				
+
 				<section class="banner" id="mvc" ng-show="isNear(100)" layout="row" hide-sm>
-					
+
 					<section flex>
 						<p>MVC</p>
-						
+
 						<ul>
 							<li>ASP.NET</li>
 							<li>Website</li>
 							<li>Razor</li>
 						</ul>
 					</section>
-					
-		
-					
-				
+
+
+
+
 				</section>
 			</section>
-			
+
 			<md-slider flex ng-model="level" min="0" max="{{realHeight}}" aria-label="level" class="md-primary">
 			</md-slider>
 
-      </md-card>
-	  
-	  <section class="max-sized margin-top"  ng-controller="ppLeaderboardCtrl" ng-init="getTopTen()">
-		<md-card>
-		<md-toolbar class="md-theme-indigo">
-			<h1 class="md-toolbar-tools">Top 10</h1>
-		</md-toolbar>
-		<md-card-content>
-			<table class="leaderboard">
-				<thead>
-					<tr><td>#</td><td>Naam</td><td>Avans punten</td></tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="user in users">
-						<td>{{$index + 1}}</td>
-						<td>{{user.name}}</td>
-						<td>{{user.points}}</td>
-					</tr>
-				</tbody>
-			</table>
-		</md-card-content>
 		</md-card>
-	</section>
 
-  </section>
+		<section class="max-sized margin-top" ng-controller="ppLeaderboardCtrl" ng-init="getTopTen()">
+			<md-card>
+				<md-toolbar class="md-theme-indigo">
+					<h1 class="md-toolbar-tools">Top 10</h1>
+				</md-toolbar>
+				<md-card-content>
+					<table class="leaderboard">
+						<thead>
+							<tr>
+								<td>#</td>
+								<td>Naam</td>
+								<td>Avans punten</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="user in users">
+								<td>{{$index + 1}}</td>
+								<td>{{user.name}}</td>
+								<td>{{user.points}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</md-card-content>
+			</md-card>
+		</section>
+
+	</section>
+</section>

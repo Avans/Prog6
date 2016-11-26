@@ -24,7 +24,8 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
         .state('opdrachten4', { url: '/opdrachten/week4', templateUrl: 'opdrachten/week4.html' })
         .state('opdrachten5', { url: '/opdrachten/week5', templateUrl: 'opdrachten/week5.html' })
         .state('opdrachten6', { url: '/opdrachten/week6', templateUrl: 'opdrachten/week6.html' })
-        .state('opdrachtenOverview', { url: '/opdrachten/overview', templateUrl: 'opdrachten/overview.html' });
+        .state('opdrachtenOverview', { url: '/opdrachten/overview', templateUrl: 'opdrachten/overview.html' })
+        .state('uitwerkingen', { url: '/opdrachten/uitwerkingen', templateUrl: 'opdrachten/uitwerkingen.html' });
 
     //Content
     //Testing
