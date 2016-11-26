@@ -3,58 +3,73 @@
 </md-toolbar>
 
 <section class="md-padding max-sized">
-  <article class="md-padding">
-        <h2>Azure</h2>
-		
+	<article class="md-padding">
+		<h2>Azure</h2>
+
 		<p>
-			Het is mogelijk om onze service applicatie te starten via Visual Studio.
-			Een service moet daarentegen 24/7 beschikbaar zijn voor andere applicaties. 
-			Hierdoor is het slimmer om onze WCF service te laten draaien op een server. 
+			Het is mogelijk om onze service applicatie te starten via Visual Studio. Een service moet daarentegen 24/7 beschikbaar zijn
+			voor andere applicaties. Hierdoor is het slimmer om onze WCF service te laten draaien op een server.
 		</p>
-		
+
 		<p>
-			Er zijn verschillende omgevingen waar je je applicatie kan hosten. 
-			Het is vereist dat op de omgeving waarin je wilt hosten IIS (Internet Information Services) geïnstalleerd staat.
-			Dit is een verzameling van serverdiensten gemaakt door Microsoft.  
+			Er zijn verschillende omgevingen waar je je applicatie kan hosten. Het is vereist dat op de omgeving waarin je wilt hosten
+			IIS (Internet Information Services) geïnstalleerd staat. Dit is een verzameling van serverdiensten gemaakt door Microsoft.
 		</p>
-		
+
 		<p>
-			Naast deze fysieke servers, is het ook mogelijk om je applicatie te hosten in de <b>cloud</b>.
-			Microsoft biedt je een cloud omgeving aan genaamd Azure. Hier heb je niet alleen de mogelijkheid om applicaties te hosten, maar nog veel meer. 
+			Naast deze fysieke servers, is het ook mogelijk om je applicatie te hosten in de <b>cloud</b>. Microsoft biedt je een
+			cloud omgeving aan genaamd Azure. Hier heb je niet alleen de mogelijkheid om applicaties te hosten, maar nog veel meer.
 		</p>
-		
+
 		<p>
 			Wij gaan onze applicatie hosten in de <b>cloud</b>.
 		</p>
-		
+
 		<md-card>
-			<img src="onderwerp/wcf/img/azureplatform.png" >
+			<img src="onderwerp/wcf/img/azureplatform.png">
 		</md-card>
-		
-		
-			
+
+
+
 		<p>
-			Als student van Avans hogeschool kun je toegang krijgen tot Azure via Dreamspark 
-			<a target="_blank" href="https://www.dreamspark.com/Product/Product.aspx?productid=99">Microsoft Azure for Students</a> 
-			
+			Als student van Avans hogeschool kun je toegang krijgen tot Azure via Dreamspark
+			<a target="_blank" href="https://www.dreamspark.com/Product/Product.aspx?productid=99">Microsoft Azure for Students</a>
 		</p>
-		
-		<h3>Deploy</h3>
-		
+
+		<h3>Publish</h3>
+
+		<md-card>
+
+			<md-content class="md-padding ng-scope">
+
+				<h3>Screencast</h3>
+
+
+				<p>
+					Als extra uitleg is er een screencast beschikbaar die door alle stappen van de workshop opdracht loopt.
+				</p>
+
+			</md-content>
+			<div class="embed-container ng-scope">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/_igLsFRO5PU" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</md-card>
+
+
 		<div layout="row" layout-sm="column">
 			<article>
 				<p>
-					
-					Er zijn verschillende manieren om een applicatie te deployen op een server. Wij gaan gebruik maken van de ingebouwde functionaliteit 
-					in Visual Studio. 
+
+					Er zijn verschillende manieren om een applicatie te deployen op een server. Wij gaan gebruik maken van de ingebouwde functionaliteit
+					in Visual Studio.
 				</p>
 				<p>
-					Het is namelijk mogelijk om een project vanuit Visual Studio te <b>publishen</b>. 
-					Om dit te bereiken moeten we een aantal stappen van een wizard doorlopen.
+					Het is namelijk mogelijk om een project vanuit Visual Studio te <b>publishen</b>. Om dit te bereiken moeten we een aantal
+					stappen van een wizard doorlopen.
 				</p>
-				
+
 				<p>
-					In de sheets van het werkcollege zijn deze stappen terug te vinden. 
+					In de sheets van het werkcollege zijn deze stappen terug te vinden.
 				</p>
 
 			</article>
@@ -62,59 +77,58 @@
 				<img src="onderwerp/wcf/img/publish.png">
 			</div>
 		</div>
-		
+
+
 		<md-card>
 			<md-toolbar class="md-warn">
-			<h1 class="md-toolbar-tools">Firewall</h1>
+				<h1 class="md-toolbar-tools">Firewall</h1>
 			</md-toolbar>
 			<img src="onderwerp/wcf/img/firewall.png">
 			<md-card-content>
 				<p>
-					Windows Azure heeft een firewall waar je toestemming moet verlenen tot je SQL server. 
-					Ga naar je SQL database > SQL server > Instellingen > Firewall en voeg hier je locale IP adres aan toe.
+					Windows Azure heeft een firewall waar je toestemming moet verlenen tot je SQL server. Ga naar je SQL database > SQL server
+					> Instellingen > Firewall en voeg hier je locale IP adres aan toe.
 				</p>
-				
+
 				<p>
 					<i><b>Tip:</b>Voeg de range 0.0.0.0 tot 255.255.255.255 toe om iedereen toegang te geven.</i>
 				</p>
 			</md-card-content>
 		</md-card>
-       
-		<h3>Webservice</h3>
-		
-		<p>
-			Na deze stappen staat de webservice online. 
-			Nu is het mogelijk voor andere applicaties om deze service te consumeren. 
-		</p>
-		<p>	
-			Daarnaast kun je statistieken over je webservice bekijken, en is je webservice schaalbaar.
-			Dit houdt in dat het mogelijk is om de capaciteit van je service te verhogen. 
-			Heb je vandaag 10 gebruikers, en morgen 1 miljoen? Dat is geen probleem.
-			Zolang je het budget hebt om je service te upgraden!
-		
-		<md-card>
-			<img src="onderwerp/wcf/img/avanschatservice.png" >
-		</md-card>
-		
-		
-			
 
-		
-		
-  </article>
+		<h3>Webservice</h3>
+
+		<p>
+			Na deze stappen staat de webservice online. Nu is het mogelijk voor andere applicaties om deze service te consumeren.
+		</p>
+		<p>
+			Daarnaast kun je statistieken over je webservice bekijken, en is je webservice schaalbaar. Dit houdt in dat het mogelijk
+			is om de capaciteit van je service te verhogen. Heb je vandaag 10 gebruikers, en morgen 1 miljoen? Dat is geen probleem.
+			Zolang je het budget hebt om je service te upgraden!
+
+			<md-card>
+				<img src="onderwerp/wcf/img/avanschatservice.png">
+			</md-card>
+
+
+
+
+
+
+	</article>
 </section>
 
 
 
 
-		
-<div class="md-actions navigate" layout="row" layout-align="center center">      
-	<md-button  ui-sref="wcfWCF" >
-		<ng-md-icon icon="navigate_before" size="36"></ng-md-icon> 
+
+<div class="md-actions navigate" layout="row" layout-align="center center">
+	<md-button ui-sref="wcfWCF">
+		<ng-md-icon icon="navigate_before" size="36"></ng-md-icon>
 		<md-tooltip>WCF</md-tooltip>
 	</md-button>
-	<md-button  ui-sref="wcfConsume" >
-		<ng-md-icon icon="navigate_next"  size="36"></ng-md-icon> 
+	<md-button ui-sref="wcfConsume">
+		<ng-md-icon icon="navigate_next" size="36"></ng-md-icon>
 		<md-tooltip>Service consumeren</md-tooltip>
 	</md-button>
 </div>
