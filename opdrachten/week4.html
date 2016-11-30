@@ -8,20 +8,91 @@
 		<h2>Introductie</h2>
 
 		<p>
-			Deze week geen workshop opdracht, maar alleen een huiswerk opdracht. We gaan de onderwerpen van de afgelopen weken herhalen
-			in 1 grote opdracht. We gaan een <b>League of Legends Manager</b> applicatie bouwen.
-		</p>
-
-		<p>
-			Deze opdracht wordt gemaakt in DUO's! We gaan dus alvast oefenen voor het assessment.
+			Elke week zijn er nieuwe opdrachten uit een bepaalde categorie. Voor deze week staan er 3 opdrachten klaar:
 		</p>
 
 		<ul>
-
+			<li>Een Workshop opdracht (WS) </br>
+			</li>
+			<li>Een <b>Huiswerk</b> opdracht (Avans punten)</br>
+			</li>
 		</ul>
 	</article>
 
-	<md-card pp-assignment="'leagueManager'" class="assignment hard">
+	<md-card class="assignment workshop relative">
+		<section class="header">
+			<h2 class="md-title">League Store</h2>
+			<span class="completed">
+            Workshop assignment
+        </span>
+
+			<span class="points">
+                ws
+        <md-tooltip>Workshop Assignment</md-tooltip>
+        </span>
+
+		</section>
+		<md-card-content>
+
+			<p>
+				Bekijk de website <a target="_blank" href="http://leaguestore.azurewebsites.net/">http://leaguestore.azurewebsites.net/</a>.
+			</p>
+
+			<p>
+				Deze website is gemaakt in ASP.net MVC 5.0. We gaan deze website verder uitbreiden met meer logica.
+			</p>
+
+			<p>
+				Open het MVC project <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">LeagueStore</a>.
+			</p>
+
+
+			<h3>De opdracht</h3>
+
+			<p>
+				Bekijk de klasse <b>HomeController</b> en specifiek de methode <b>News</b>. In deze methode worden een aantal gegevens
+				op de ViewBag gezet die we later in de view gebruiken om deze op ons scherm te toveren.
+			</p>
+
+			<p>
+				Bouw een nieuwe pagina voor de website met de naam <b>Contact</b>. Breid de klasse <b>HomeController</b> uit met een
+				nieuwe actie om dit voor elkaar te krijgen. Gebruik die ViewBag om de volgende gegevens op het scherm te toveren.
+
+			</p>
+
+			<ul>
+				<li>Naam winkel</li>
+				<li>Adres</li>
+				<li>Telefoonnummer</li>
+				<li>Email adres</li>
+				<li>Datum waarop de website is opgericht</li>
+			</ul>
+
+			<p>Het is nu nog lastig om deze pagina te open. Breid de navigatie structuur uit met een link naar deze nieuwe pagina.
+				<p>
+
+					<p>Is dit gelukt? Dan gaan we nu iets moeilijkers proberen. Maak een lijst met daar in objecten van de klasse <b>Employee</b>.
+						Je kan deze uit de database halen via Entity Framework. Vul deze lijst met minstens 3 objecten met test data. Ook deze
+						lijst gaan we op de ViewBag zetten om deze later te gebruiken in Razor.
+						</b>
+
+						<p>
+							Breid het scherm <b>Contact</b> uit de informatie over de medewerkers uit de eerder gemaakte lijst.
+						</p>
+
+						<p>
+							<i><b>Tip:</b> Gebruik een for-loop in Razor</i>
+						</p>
+
+						<section class="output">
+							<label>Github</label>
+							<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">Start project</a></span>
+						</section>
+
+		</md-card-content>
+	</md-card>
+
+	<md-card pp-assignment="'leagueStore'" class="assignment normal">
 		<section class="header">
 			<h2 class="md-title">{{assignment.descr}}</h2>
 			<span class="completed">Completed by {{assignment.completedBy.length}} students</span>
@@ -30,80 +101,43 @@
             {{assignment.points}}
             <md-tooltip>Avans points</md-tooltip>
         </span>
+
 		</section>
+
 		<md-card-content>
 
 			<p>
-				We gaan een League manager bouwen. Dit is een spel waarbij je je eigen League of legends team kan samenstellen en kan spelen
-				tegen andere spelers.
+				Voor deze opdracht maken we gebruik van het zelfde project als de workshop opdracht
 			</p>
 
 			<p>
-				Om te beginnen moet je het <a target="_blank" href="https://github.com/Avans/Prog6_LeagueManager">Start project</a></span>
-				forken. In deze versie kun je met 2 man aan deze opdracht werken.
+				Naast producten uit de webshop moet er ook een pagina met bundels op de website komen.
 			</p>
 
 			<p>
-				In de solution <b>LeagueMananger</b> zitten de volgende projecten
+				Bouw een pagina met die een overzicht toont van de bundels in de database. Deze pagina <b>moet</b> gebruik maken van
+				een strongly typed view.
 			</p>
 
-			<ul>
-				<li>LeagueManager.Domain</li>
-				<li>LeagueManager.Service</li>
-				<li>LeagueManager.Test</li>
-				<li>LeagueManager.WPF</li>
-			</ul>
-
-
-			<md-card>
-				<img src="opdrachten/img/league.png">
-			</md-card>
-
-			<h2>De flow van het spel</h2>
-
-			<ol>
-				<li>Stel een team samen van champions</li>
-				<li>Stuur deze samenstelling naar de server</li>
-				<li>Kijk elke seconde of er een andere speler een samenstelling heeft verstuurd</li>
-				<li>De server kijkt welke samenstelling gewonnen heeft en stopt deze in een game resultaat</li>
-				<li>Haal de resultaten op van de server</li>
-			</ol>
-
-			<h2>De opdracht</h2>
-
+			<p>Kom je er even niet uit? Kijk dan goed naar de controller <b>ProductController</b>. Hier staan veel voorbeelden die je
+				kan hergebruiken voor deze opdracht</b>. Kijk alleen naar de methodes <b>Index</b> en <b>Details</b>. De andere methodes
+				gaan we volgende week behandelen.
+			</p>
 			<p>
-				Bouw de service verder af en sluit deze aan op de client-applicatie. Deze service moet een <b>OperationContract</b> hebben
-				waarmee je je gekozen opstelling naar de server kan versturen. Daarnaast moet de server een <b>OperationContract</b>				hebben waarmee je het resultaat van de 'match' kan ophalen. Indien de 'match' resultaten direct na het versturen van
-				je opstelling beschikbaar zijn, moet deze methode de resultaten meteen teruggeven.
+				Naast het overzicht van alle bundels moet het voor een gebruiker ook mogelijk zijn om de details van 1 bundel te bekijken.
 			</p>
-
 			<p>
-				De service moet ook een <b>OperationContract</b> hebben die een lijst van alle te spelen champions teruggeeft.
+				Het is niet nodig om nieuwe bundels aan te maken! Het is alleen nodig om deze te tonen op het scherm.
 			</p>
-
-			<p>
-				In het domeinmodel zit een interface <b>IChampion</b>. Gebruik deze interface om voor minstens 5 champions een klasse
-				te defini&euml;ren. Gebruik hierna Ninject om een volledige lijst met champions op te halen.
-			</p>
-
-
-			<h2>Technische eisen</h2>
-			<ul>
-				<li>Maak gebruik van Ninject of een ander Dependency Injection framework</li>
-				<li>Zorg voor minstens 60% code coverage</li>
-				<li>Host de service in WCF</li>
-				<li>Sla de informatie op in een database (ef)</li>
-			</ul>
-
-
 
 			<section class="output">
 				<label>Github</label>
-				<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueManager">Start project</a></span>
+				<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">Start project</a></span>
 			</section>
-
-
 
 		</md-card-content>
 	</md-card>
+
+
+
 </section>

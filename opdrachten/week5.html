@@ -35,109 +35,97 @@
 		<md-card-content>
 
 			<p>
-				Bekijk de website <a target="_blank" href="http://leaguestore.azurewebsites.net/">http://leaguestore.azurewebsites.net/</a>.
+				We gaan weer verder bouwen aan onze website <a target="_blank" href="http://leaguestore.azurewebsites.net/">http://leaguestore.azurewebsites.net/</a>.
 			</p>
 
 			<p>
-				Deze website is gemaakt in ASP.net MVC 5.0. We gaan deze website verder uitbreiden met meer logica.
-			</p>
-
-			<p>
-				Open het MVC project <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">LeagueStore</a>.
+				Bouw verder in het project van <a ui-sref="opdrachten5">vorige week</a> of clone <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">het start project</a>				als je dit nog niet gedaan hebt.
 			</p>
 
 
 			<h3>De opdracht</h3>
 
 			<p>
-				Bekijk de klasse <b>HomeController</b> en specifiek de methode <b>News</b>. In deze methode worden een aantal gegevens
-				op de ViewBag gezet die we later in de view gebruiken om deze op ons scherm te toveren.
+				Breid de <b>BundelController</b> uit met een Post methode. Deze methode toont een pagina aan de gebruiker waar hij informatie
+				over een bundel kan invoeren.
 			</p>
 
-			<p>
-				Bouw een nieuwe pagina voor de website met de naam <b>Contact</b>. Breid de klasse <b>HomeController</b> uit met een
-				nieuwe actie om dit voor elkaar te krijgen. Gebruik die ViewBag om de volgende gegevens op het scherm te toveren.
-
-			</p>
+			<p>De gebruiker moet de volgende gegevens kunnen invoeren:</p>
 
 			<ul>
-				<li>Naam winkel</li>
-				<li>Adres</li>
-				<li>Telefoonnummer</li>
+				<li>Name</li>
+				<li>Description</li>
+				<li>RiotPoints</li>
 				<li>Email adres</li>
-				<li>Datum waarop de website is opgericht</li>
 			</ul>
 
-			<p>Het is nu nog lastig om deze pagina te open. Breid de navigatie structuur uit met een link naar deze nieuwe pagina.
-				<p>
+			<p>
+				Het moet voor de gebruiker ook mogelijk zijn om producten te kiezen waar de bundel uit bestaat. Gebruik hiervoor het html
+				<b>select</b> element met <b>MultiSelect</b>.
+			</p>
 
-					<p>Is dit gelukt? Dan gaan we nu iets moeilijkers proberen. Maak een lijst met daar in objecten van de klasse <b>Employee</b>.
-						Je kan deze uit de database halen via Entity Framework. Vul deze lijst met minstens 3 objecten met test data. Ook deze
-						lijst gaan we op de ViewBag zetten om deze later te gebruiken in Razor.
-						</b>
+			<p>
+				Om dit voor elkaar te krijgen moet je nadenken welke informatie er naar de server gestuurd wordt over de gekozen producten.
+				Zijn dit de volledige producten? Of bijvoorbeeld alleen de Id's?
+			</p>
 
-						<p>
-							Breid het scherm <b>Contact</b> uit de informatie over de medewerkers uit de eerder gemaakte lijst.
-						</p>
+			<p><i><b>Tip:</b> Om alle producten in de select box te krijgen moet je gebruik maken van een View Model of de ViewBag</b><p>
 
-						<p>
-							<i><b>Tip:</b> Gebruik een for-loop in Razor</i>
-						</p>
 
-						<section class="output">
-							<label>Github</label>
-							<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">Start project</a></span>
-						</section>
+       <p>Al klaar? Dat is snel! Begin dan aan de huiswerk opdracht of 
+       <section class="output">
+            <label>Github</label>
+            <span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">Start project</a></span>
+        </section>
+        
+        </md-card-content>
+     </md-card>
+     
+  <md-card pp-assignment="'leagueStoreUpdate'" class="assignment normal">
+      <section class="header">
+        <h2 class="md-title">{{assignment.descr}}</h2>
+        <span class="completed">Completed by {{assignment.completedBy.length}} students</span>
 
-		</md-card-content>
-	</md-card>
-
-	<md-card pp-assignment="'leagueStore'" class="assignment normal">
-		<section class="header">
-			<h2 class="md-title">{{assignment.descr}}</h2>
-			<span class="completed">Completed by {{assignment.completedBy.length}} students</span>
-
-			<span class="points">
+        <span class="points">
             {{assignment.points}}
             <md-tooltip>Avans points</md-tooltip>
-        </span>
+        </span>  
 
-		</section>
-
-		<md-card-content>
-
-			<p>
-				Voor deze opdracht maken we gebruik van het zelfde project als de workshop opdracht
-			</p>
-
-			<p>
-				Naast producten uit de webshop moet er ook een pagina met bundels op de website komen.
-			</p>
-
-			<p>
-				Bouw een pagina met die een overzicht toont van de bundels in de database. Deze pagina <b>moet</b> gebruik maken van
-				een strongly typed view.
-			</p>
-
-			<p>Kom je er even niet uit? Kijk dan goed naar de controller <b>ProductController</b>. Hier staan veel voorbeelden die je
-				kan hergebruiken voor deze opdracht</b>. Kijk alleen naar de methodes <b>Index</b> en <b>Details</b>. De andere methodes
-				gaan we volgende week behandelen.
-			</p>
-			<p>
-				Naast het overzicht van alle bundels moet het voor een gebruiker ook mogelijk zijn om de details van 1 bundel te bekijken.
-			</p>
-			<p>
-				Het is niet nodig om nieuwe bundels aan te maken! Het is alleen nodig om deze te tonen op het scherm.
-			</p>
-
-			<section class="output">
-				<label>Github</label>
-				<span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">Start project</a></span>
-			</section>
-
-		</md-card-content>
-	</md-card>
-
-
-
+      </section>
+    
+       <md-card-content>
+           
+           <p>
+               Voor deze opdracht maken we gebruik van hetzelfde project als de workshop opdracht
+           </p>
+           
+           <p>
+              In de workshop opdracht hebben we het scherm gemaakt om nieuwe bundels toe te voegen. 
+              Nu gaan we bestaande bundels updaten. 
+           </p>
+           
+           <p>
+               Bouw een pagina die de gegevens van een bestaande bundel laat zien die de gebruiker kan aanpassen. 
+               Na het opslaan moet de bestaande bundel in de database worden aangepast met de nieuwe gegevens. 
+           </p>
+           
+           <p>
+               Test of de bestaande bundel wordt aangepast of dat er een nieuwe bundel (of product) wordt aangemaakt. 
+           </p>
+           
+           <p>
+               <b>Tip:</b>het updaten van foreign keys in entity framework (koppeling tussen product en bundel) is lastig.
+               Probeer hier een nette oplossing voor te vinden.
+           </p>
+           
+           <section class="output">
+            <label>Github</label>
+            <span class="ng-binding">  <a target="_blank" href="https://github.com/Avans/Prog6_LeagueStore">Start project</a></span>
+        </section>
+           
+       </md-card-content>
+     </md-card>
+           
+   
+   
 </section>
