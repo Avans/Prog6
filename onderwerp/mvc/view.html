@@ -12,8 +12,7 @@
 		</p>
 
 		<p>
-			Er zijn ook andere view engines dan Razor. Op stackoverflow staat een overzicht met verschillende view engines met voor en
-			nadelen.
+			Er zijn ook andere view engines dan Razor. Op stackoverflow staat een overzicht met verschillende view engines met voor- en nadelen.
 		</p>
 
 		<section layout="row" layout-align="center end">
@@ -56,10 +55,7 @@
 				<ul>
 					<li>Dynamic vs Object</li>
 					<li>‘Loosely’ typed</li>
-					<li>Geen compile time checking Strongly Typed</li>
-					<li>Strongly typed</li>
-					<li>View is data aware. </li>
-					<li>Compile time checking</li>
+					<li>Geen compile time checking</li>
 				</ul>
 			</section>
 			<section flex>
@@ -89,6 +85,10 @@
 					<h3>Stap 1/3</h3>
 					<p>
 						Maak een model aan en geef deze mee terug aan de view.
+					</p>
+					<p>
+						Het kan zo zijn dat je bij het creëren van je view je model niet terug kunt vinden in het drop down lijstje. 
+						Zorg ervoor dat je model public is en <b>rebuild</b> je solution. 
 					</p>
 					<pre class="ppPrettyPrint">
 						public ActionResult ShowPerson() { var person = new Person(); person.FirstName = "Carice"; person.LastName = "van Houten";
