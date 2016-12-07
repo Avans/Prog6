@@ -27,13 +27,18 @@ app.constant('appConfig', {
 var routesConfig = require('./config/routes');
 var appCtrl = require("./controllers/appCtrl");
 var towerCtrl = require('./controllers/towerCtrl');
+var assignmentCtrl = require('./controllers/assignmentCtrl');
 var sbLoad = require('./directives/sbLoad');
 
 //Add the controller and config to the module
 app.controller('appCtrl', appCtrl);
 app.controller('towerCtrl', towerCtrl);
+app.controller('assignmentCtrl', assignmentCtrl);
 app.directive('sbLoad', sbLoad);
 app.config(routesConfig);
+
+var emailShort = require('./filters/emailshort');
+app.filter('emailShort',  emailShort);
 
 app.config(function($mdThemingProvider) {
   $mdThemingProvider.definePalette('amazingPaletteName', {

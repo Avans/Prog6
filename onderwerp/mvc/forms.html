@@ -1,0 +1,213 @@
+<md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">Forms</h1>
+</md-toolbar>
+
+<section class="md-padding max-sized">
+    <article class="md-padding">
+        <h2>Introductie</h2>
+
+        <p>
+            Het ophalen (get) van data is nu al gelukt! We kunnen al een lijst van bijvoorbeeld Bundles laten zien in onze webshop. Nu
+            is een site niet compleet als we niet de optie hebben nieuwe items toe te voegen.
+        </p>
+
+        <p>
+            In de wereld van HTML heb je zogenaamde 'form' elementen waarmee de gebruiker data kan invullen en versturen. Ook ASP.Net
+            maakt gebruik van deze technieken. Gelukkig zijn er wel een aantal Html hulp methodes beschikbaar om dit wat
+            makkelijker te maken.
+        </p>
+    </article>
+
+    <md-tabs md-dynamic-height md-border-bottom md-swipe-content md-stretch-tabs="always">
+        <md-tab label="1. Get">
+            <md-content class="md-padding">
+
+                <h4>Leeg formulier</h4>
+
+                <p>Voordat we een formulier kunnen invullen, hebben we een formulier nodig.
+                    Je hebt dus een 'Create' Action nodig met het zogenaamde 'Get' attribuut.
+                </p>
+
+                <pre class="ppPrettyPrint" >
+[HttpGet]
+public ActionResult Create()
+{
+   var bundle = new Bundle()
+   return View(bundle);
+}
+                </pre>
+
+            </md-content>
+        </md-tab>
+        <md-tab label="2. Razor">
+            <md-content class="md-padding">
+
+                <h4>Teken formulier</h4>
+
+                <p>
+                   Nu is het mogelijk om zelf met de hand een html formulier te maken. 
+                   Gelukkig heeft ASP.net ons een hele mooie Html helper gegeven.
+                   Met behulp van deze helper kunnen we een form, input velden en meer tekenen!
+                </p>
+
+                                
+                <pre class="ppPrettyPrint" >
+@model LeagueStore.Models.Bundle
+
+    @using (Html.BeginForm(&quot;Create&quot;, &quot;Bundle&quot;))
+    {
+        &lt;fieldset&gt;
+   
+            @Html.EditorFor(m =&gt; m.Name)
+	   &lt;!-- zelfde als --&gt;
+            &lt;input name=&quot;Name&quot; /&gt;
+            
+            &lt;input type=&quot;submit&quot; value=&quot;Save&quot; /&gt;
+
+        &lt;/fieldset&gt;
+    }
+</div>
+                </pre>
+
+            </md-content>
+        </md-tab>
+        <md-tab label="3. Html">
+            <md-content class="md-padding">
+
+                <h4>Uiteindelijke html</h4>
+
+                <p>
+                    De broswer zal uiteindelijk de onderstaande html laten zien!</p>
+
+                
+                <pre class="ppPrettyPrint" >
+@model LeagueStore.Models.Bundle
+
+&lt;form action=&quot;/Bundle/Create&quot; method=&quot;post&quot;&gt;
+    
+   &lt;input class=&quot;text-box single-line&quot; id=&quot;Bundle_Name&quot; name=&quot;Bundle.Name&ldquo; &gt;
+   &lt;!-- zelfde als --&gt;
+   &lt;input name=&quot;Bundle.Name&quot;&gt; 
+
+   &lt;input type=&quot;submit&quot; value=&quot;Save&quot;&gt;
+
+&lt;/form&gt;
+
+</div>
+
+                </pre>
+
+              
+            </md-content>
+        </md-tab>
+        <md-tab label="4. Post">
+            <md-content class="md-padding">
+
+               <h4>Formulier accepteren</h4>
+
+                   <p>Standaard zal een formulier de data versturen naar dezelfde 'url'. 
+                    Dit houd in dat als je formulier opgehaald is op de controller 'Bundle' met de actie 'Create', dan
+                    zal het formulier ook verstuurd worden naar de controller 'Bundle' met de actie 'Create' met als verschil
+                    dat deze actie gelabled moet worden met het 'Post' attribuut.
+                </p>
+
+                <p>
+                    We kunnen nu in deze actie bijvoorbeeld de meegegeven bundle opslaan in de database.
+                </p>
+
+                <pre class="ppPrettyPrint" >
+
+[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult Create(Bundle bundle)
+{
+
+	??????????????????????
+
+}
+                </pre>
+
+
+            </md-content>
+        </md-tab>
+    </md-tabs>
+
+    <article class="md-padding">
+        <h2>View Models</h2>
+
+        <p>Soms bied het model wat je wilt laten zien niet genoeg ruimte voor extra gegevens.
+            Bijvoorbeeld in de workshop opdracht van week 5. Hier is het de bedoeling dat je een aantal producten kunt selecteren die bij een Bundle horen.
+            Nu heeft de klasse Bundle alleen een lijst van geselecteerde producten, en deze is standaard leeg.
+        </p>
+
+        <p>De oplossing is dan om een View Model te maken voor de klasse Bundle, waar je wil de ruimte hebt om een volledige lijst van producten mee te geven. </p>
+
+<pre class="ppPrettyPrint" >
+ public class BundleVM
+ {
+        public Bundle Bundle { get; set; }
+
+        public int[] ProductIds { get; set; }
+
+        public List&lt;Product&gt; Products { get; set; }
+ }
+</pre>
+
+        <p>Je zou deze lijst ook via de ViewBag mee kunnen geven maar dat is natuurlijk niet netjes!</p>
+
+        <p>De uiteindelijk geselecteerde producten worden eerst opgeslagen in een array met integers.
+            In de controller kunnen we deze id's omtoveren tot echte producten! Let goed op het 'name' attribuut van de tag select. 
+            Deze heeft een waarde die overeenkomt met de property waar we de product Id's opslaan.
+        </p>
+
+        <pre class="ppPrettyPrint" >
+&lt;h4&gt;Producs in this bundle&lt;/h4&gt;
+
+&lt;select multiple=&quot;multiple&quot; name=&quot;ProductIds&quot; class=&quot;productSelect&quot;&gt;
+@foreach (var product in Model.Products)
+{
+    if (Model.Bundle.Products.Contains(product))
+    {
+        &lt;option selected=&quot;selected&quot; value=&quot;@product.Id&quot;&gt;@product.Name&lt;/option&gt;
+    }
+    else
+    {
+        &lt;option value=&quot;@product.Id&quot;&gt;@product.Name&lt;/option&gt;
+    }
+}
+&lt;/select&gt;
+    </pre>
+
+        <h2>Onderwater</h2>
+
+        <p>
+            Het voelt misschien alsof er nu heel veel magie plaats vind maar dit valt eigenlijk wel mee.
+            ASP.net maakt gewoon slim gebruik van het HTTP protocol. Hier gaan we in blok 7 verder op in!
+        </p>
+
+        <p>
+            Je kunt nu wel al makkelijk zien dat het HTTP protocol het versturen van data in een formulier heel makkelijk maakt.
+            Open in de browser de development tools (Ik maak zelf gebruik van Chrome, vandaar dat alle voorbeelden in chrome zijn ).
+            Je kunt nu onder het tabblad netwerk kijken welke data er van en naar de server gaat.
+            Vul nu de informatie van een Bundle in en klik op save. 
+            Je zult dan de volgende informatie terug kunnen vinden!
+        </p>
+
+        <img   src="onderwerp/mvc/img/network_snippet.png">
+
+    </article>
+
+
+
+
+
+    <div class="md-actions navigate" layout="row" layout-align="center center">
+        <md-button ui-sref="mvcViews">
+            <ng-md-icon icon="navigate_before" size="36"></ng-md-icon>
+            <md-tooltip>Views</md-tooltip>
+        </md-button>
+        <md-button ui-sref="opdrachten5">
+            Assignments
+        </md-button>
+    </div>
+</section>

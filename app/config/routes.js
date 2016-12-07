@@ -46,6 +46,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     addState('mvcIntroductie');
     addState('mvcControllers');
     addState('mvcView');
+    addState('mvcForms');
 
 
 
