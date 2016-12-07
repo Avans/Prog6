@@ -284,11 +284,6 @@ blockquote p {
         vertical-align: middle;
  }
 
-.bullets .points, ng-md-icon{
-		fill: white;
-}
-
-
 
 @media screen and (min-width: 960px) {
     
