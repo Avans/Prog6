@@ -1,3 +1,11 @@
+img{
+	max-width: 100%;
+}
+
+md-tab md-content{
+	min-height:200px;
+}
+
 /** Assignments **/
 
 .assignment{ margin-bottom:22px; }
@@ -21,7 +29,6 @@
 .assignment.hard .header{ background-color:rgb(244,67,54); }
 .assignment.workshop .header{ background-color:#01A4EF; }
 /** Assignment end **/
-
 
 /** The tower **/
 #background{

@@ -47,27 +47,21 @@
         
         <h4>Stappenplan</h4>
         
-  
-    <md-card>
-      <md-toolbar>
-          <h1 class="md-toolbar-tools">Stappenplan controller</h1>
-      </md-toolbar>
-      <pp-carousel>
-        <ul>  
-          <li>
-            <h3>Stap 1/6</h3>
-            <p>
-              Maak een Controller genaamd “HomeController”. 
-            </p>
-            <p>
-              Je kunt een controller ook een andere naam geven maar deze Controller 
-              moet altijd de suffix ‘Controller’ hebben en overerven van de base class Controller.
-            </p>
+		<md-tabs md-dynamic-height md-border-bottom md-swipe-content md-stretch-tabs="always">
+        	<md-tab label="Stap 1">
+            	<md-content class="md-padding">
+
+                <p>
+                  Maak een Controller genaamd “HomeController”. 
+                </p>
+                <p>
+                  Je kunt een controller ook een andere naam geven maar deze Controller 
+                  moet altijd de suffix ‘Controller’ hebben en overerven van de base class Controller.
+                </p>
             
-              
-              <div layout="row">
-                <div flex="50">
-                  <pre class="ppPrettyPrint" >
+                <div layout="row">
+                  <div flex="50">
+                    <pre class="ppPrettyPrint" >
 public class HomeController : Controller
 {
     public ActionResult Index()
@@ -75,15 +69,16 @@ public class HomeController : Controller
         return View();
     }
 }</pre>
-                </div>
-                <div flex="50">
-                  <img src="onderwerp/mvc/img/stap1.png">
-                </div>
-              </div>
-            </p>
-          </li>  
-          <li>
-            <h3>Stap 2/6</h3>
+                  </div>
+                  <div flex="50">
+                    <img src="onderwerp/mvc/img/stap1.png">
+                  </div>
+                </div>  
+            	</md-content>
+        	</md-tab>
+          <md-tab label="Stap 2">
+            <md-content class="md-padding">
+
             <p>
               Voeg Actions toe aan de Controller. 
             </p>
@@ -103,10 +98,11 @@ public ActionResult About()
 }</pre>
 
 
-            
-          </li>  
-          <li>
-            <h3>Stap 3/6</h3>
+            </md-content>
+        	</md-tab>
+          <md-tab label="Stap 3">
+            <md-content class="md-padding">
+
             <p>
              Maak een View voor elke Action in je Controller. 
             </p>
@@ -124,25 +120,32 @@ public ActionResult About()
               <i><b>Tip</b>: Rechtermuisknop binnen de action toont het menu. </i>
             </p>
 
-          </li>  
-          <li>
-            <h3>Stap 4/6</h3>
+   	        </md-content>
+        	</md-tab>
+          <md-tab label="Stap 4">
+            <md-content class="md-padding">
+
             <p>Vul eventueel vanuit de Action de ViewBag met data die je wilt tonen in de view. </p>
             <pre class="ppPrettyPrint">ViewBag.Message = "Hello World";</pre>
               
-          </li>
-          <li>
-            <h3>Stap 5/6</h3>
+            </md-content>
+          </md-tab>
+          <md-tab label="Stap 5">
+            <md-content class="md-padding">
+
             <p>Toon de waarde uit de ViewBag in de view met Razor.</p>
             <pre class="ppPrettyPrint">
 &lt;h2&gt;Index&lt;/h2&gt;
 @ViewBag.Message
 </pre>  
-          </li>
-          <li>
-            <h3>Stap 6/6</h3>
-            <p>Maak eventueel een menu in de _layout file met daarin links naar alle controllers en alle Actions.</p>
-            <pre class="ppPrettyPrint">
+
+   	        </md-content>
+        	</md-tab>
+          <md-tab label="Stap 6">
+            <md-content class="md-padding">
+
+              <p>Maak eventueel een menu in de _layout file met daarin links naar alle controllers en alle Actions.</p>
+              <pre class="ppPrettyPrint">
 @Html.ActionLink("Home/Index", "Index", "Home")
 
 @* Met parameters *@
@@ -151,10 +154,9 @@ public ActionResult About()
 @RenderBody()
 </pre>
               
-          </li>
-        </ul>  
-    </pp-carousel>
-  </md-card>
+            </md-content>
+          </md-tab>
+      
 </article>
   <div class="md-actions navigate" layout="row" layout-align="center center">      
     <md-button ui-sref="mvcIntroductie">
