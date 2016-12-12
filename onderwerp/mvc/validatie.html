@@ -1,0 +1,81 @@
+<md-toolbar class="md-theme-indigo">
+	<h1 class="md-toolbar-tools">MVC</h1>
+</md-toolbar>
+
+<section class="md-padding max-sized">
+	<article class="md-padding">
+		<h2>Validatie</h2>
+
+    <p>Het is heel makkelijk om validatie op je formulieren toe te voegen.</p>
+    
+    <p>Er zijn zogenaamde validatie atributen beschikbaar om je hier mee te helpen.</p>
+
+    <md-card flex>
+        <md-card-content>
+            <pre class="ppPrettyPrint">
+[Required]
+[MinLength(2)]
+[MaxLength(30)]
+public string Name { get; set; }
+
+[Required]
+[DataType(DataType.Date)]
+public DateTime DateOfBirth { get; set; }
+
+[Required]
+[Range(0, 30)]
+public int Level { get; set; }</pre>
+        </md-card-content>
+    </md-card>
+
+    <p>Het controlleren op deze attributen gebeurt automatisch in de controller.
+        Via het object 'ModelState' kun je opvragen of er validatie errors zijn. </p>
+
+        
+    <md-card flex>
+        <md-card-content>
+            <pre class="ppPrettyPrint">
+if (!ModelState.IsValid)
+{
+    return View(pokemon);
+}</pre>
+        </md-card-content>
+    </md-card>
+
+    <p>In de .cshtml kun je daarna via Razor deze validatie meldingen tonen. 
+        Aangezien de meldingen zijn gelinkt aan de properties van een object, kun je ook per property de meldingen laten zien!
+    </p>
+
+        
+    <md-card flex>
+        <md-card-content>
+            <pre class="ppPrettyPrint">
+&lt;div class=&quot;form-horizontal&quot;&gt;
+    &lt;h4&gt;Pokemon&lt;/h4&gt;
+    &lt;hr /&gt;
+    @Html.ValidationSummary(true, &quot;&quot;, new { @class = &quot;text-danger&quot; })
+    &lt;div class=&quot;form-group&quot;&gt;
+        @Html.LabelFor(model =&gt; model.Name, htmlAttributes: new { @class = &quot;control-label col-md-2&quot; })
+        &lt;div class=&quot;col-md-10&quot;&gt;
+            @Html.EditorFor(model =&gt; model.Name, new { htmlAttributes = new { @class = &quot;form-control&quot; } })
+            @Html.ValidationMessageFor(model =&gt; model.Name, &quot;&quot;, new { @class = &quot;text-danger&quot; })
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </md-card-content>
+    </md-card>
+
+
+
+
+
+    <div class="md-actions navigate" layout="row" layout-align="center center">
+        <md-button ui-sref="mvcForms">
+            <ng-md-icon icon="navigate_before" size="36"></ng-md-icon>
+            <md-tooltip>Views</md-tooltip>
+        </md-button>
+        <md-button ui-sref="opdrachten5">
+            Assignments
+        </md-button>
+    </div>
+</section>
